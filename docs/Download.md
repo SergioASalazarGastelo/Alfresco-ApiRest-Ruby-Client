@@ -1,4 +1,4 @@
-# SwaggerClient::Download
+# Alfresco::Download
 
 ## Properties
 Name | Type | Description | Notes

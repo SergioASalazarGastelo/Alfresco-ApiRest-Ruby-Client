@@ -1,4 +1,4 @@
-# SwaggerClient::DeletedNode
+# Alfresco::DeletedNode
 
 ## Properties
 Name | Type | Description | Notes

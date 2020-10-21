@@ -1,4 +1,4 @@
-# SwaggerClient::DeletedNodeBodyRestore
+# Alfresco::DeletedNodeBodyRestore
 
 ## Properties
 Name | Type | Description | Notes

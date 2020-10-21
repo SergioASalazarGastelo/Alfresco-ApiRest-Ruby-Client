@@ -1,4 +1,4 @@
-# SwaggerClient::AuditBodyUpdate
+# Alfresco::AuditBodyUpdate
 
 ## Properties
 Name | Type | Description | Notes

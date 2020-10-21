@@ -1,4 +1,4 @@
-# SwaggerClient::SiteBodyCreate
+# Alfresco::SiteBodyCreate
 
 ## Properties
 Name | Type | Description | Notes

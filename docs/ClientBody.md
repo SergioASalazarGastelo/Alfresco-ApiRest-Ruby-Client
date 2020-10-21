@@ -1,4 +1,4 @@
-# SwaggerClient::ClientBody
+# Alfresco::ClientBody
 
 ## Properties
 Name | Type | Description | Notes

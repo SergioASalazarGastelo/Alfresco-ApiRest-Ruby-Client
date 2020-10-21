@@ -1,4 +1,4 @@
-# SwaggerClient::FavoriteBodyCreate
+# Alfresco::FavoriteBodyCreate
 
 ## Properties
 Name | Type | Description | Notes

@@ -1,4 +1,4 @@
-# SwaggerClient::GroupMember
+# Alfresco::GroupMember
 
 ## Properties
 Name | Type | Description | Notes

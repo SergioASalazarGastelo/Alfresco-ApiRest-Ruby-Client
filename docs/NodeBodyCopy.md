@@ -1,4 +1,4 @@
-# SwaggerClient::NodeBodyCopy
+# Alfresco::NodeBodyCopy
 
 ## Properties
 Name | Type | Description | Notes

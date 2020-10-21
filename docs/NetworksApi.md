@@ -1,4 +1,4 @@
-# SwaggerClient::NetworksApi
+# Alfresco::NetworksApi
 
 All URIs are relative to *https://localhost/alfresco/api/-default-/public/alfresco/versions/1*
 
@@ -19,15 +19,15 @@ Gets information for a network **networkId**.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'alfresco_ruby'
 # setup authorization
-SwaggerClient.configure do |config|
+Alfresco.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::NetworksApi.new
+api_instance = Alfresco::NetworksApi.new
 
 network_id = "network_id_example" # String | The identifier of a network.
 
@@ -39,7 +39,7 @@ begin
   #Get a network
   result = api_instance.get_network(network_id, opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue Alfresco::ApiError => e
   puts "Exception when calling NetworksApi->get_network: #{e}"
 end
 ```
@@ -76,15 +76,15 @@ Gets network information on a single network specified by **networkId** for **pe
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'alfresco_ruby'
 # setup authorization
-SwaggerClient.configure do |config|
+Alfresco.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::NetworksApi.new
+api_instance = Alfresco::NetworksApi.new
 
 person_id = "person_id_example" # String | The identifier of a person.
 
@@ -98,7 +98,7 @@ begin
   #Get network information
   result = api_instance.get_network_for_person(person_idnetwork_id, opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue Alfresco::ApiError => e
   puts "Exception when calling NetworksApi->get_network_for_person: #{e}"
 end
 ```
@@ -136,15 +136,15 @@ Gets a list of network memberships for person **personId**.  You can use the `-m
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'alfresco_ruby'
 # setup authorization
-SwaggerClient.configure do |config|
+Alfresco.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::NetworksApi.new
+api_instance = Alfresco::NetworksApi.new
 
 person_id = "person_id_example" # String | The identifier of a person.
 
@@ -158,7 +158,7 @@ begin
   #List network membership
   result = api_instance.list_networks_for_person(person_id, opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue Alfresco::ApiError => e
   puts "Exception when calling NetworksApi->list_networks_for_person: #{e}"
 end
 ```

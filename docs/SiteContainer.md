@@ -1,4 +1,4 @@
-# SwaggerClient::SiteContainer
+# Alfresco::SiteContainer
 
 ## Properties
 Name | Type | Description | Notes

@@ -1,4 +1,4 @@
-# SwaggerClient::DeletedNodesPaging
+# Alfresco::DeletedNodesPaging
 
 ## Properties
 Name | Type | Description | Notes

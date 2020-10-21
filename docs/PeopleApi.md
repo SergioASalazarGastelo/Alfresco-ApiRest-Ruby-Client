@@ -1,4 +1,4 @@
-# SwaggerClient::PeopleApi
+# Alfresco::PeopleApi
 
 All URIs are relative to *https://localhost/alfresco/api/-default-/public/alfresco/versions/1*
 
@@ -25,17 +25,17 @@ Create person
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'alfresco_ruby'
 # setup authorization
-SwaggerClient.configure do |config|
+Alfresco.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::PeopleApi.new
+api_instance = Alfresco::PeopleApi.new
 
-person_body_create = SwaggerClient::PersonBodyCreate.new # PersonBodyCreate | The person details.
+person_body_create = Alfresco::PersonBodyCreate.new # PersonBodyCreate | The person details.
 
 opts = { 
   fields: ["fields_example"] # Array<String> | A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. 
@@ -45,7 +45,7 @@ begin
   #Create person
   result = api_instance.create_person(person_body_create, opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue Alfresco::ApiError => e
   puts "Exception when calling PeopleApi->create_person: #{e}"
 end
 ```
@@ -82,15 +82,15 @@ Delete avatar image
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'alfresco_ruby'
 # setup authorization
-SwaggerClient.configure do |config|
+Alfresco.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::PeopleApi.new
+api_instance = Alfresco::PeopleApi.new
 
 person_id = "person_id_example" # String | The identifier of a person.
 
@@ -98,7 +98,7 @@ person_id = "person_id_example" # String | The identifier of a person.
 begin
   #Delete avatar image
   api_instance.delete_avatar_image(person_id)
-rescue SwaggerClient::ApiError => e
+rescue Alfresco::ApiError => e
   puts "Exception when calling PeopleApi->delete_avatar_image: #{e}"
 end
 ```
@@ -134,15 +134,15 @@ Get avatar image
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'alfresco_ruby'
 # setup authorization
-SwaggerClient.configure do |config|
+Alfresco.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::PeopleApi.new
+api_instance = Alfresco::PeopleApi.new
 
 person_id = "person_id_example" # String | The identifier of a person.
 
@@ -156,7 +156,7 @@ begin
   #Get avatar image
   result = api_instance.get_avatar_image(person_id, opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue Alfresco::ApiError => e
   puts "Exception when calling PeopleApi->get_avatar_image: #{e}"
 end
 ```
@@ -195,15 +195,15 @@ Gets information for the person **personId**.  You can use the `-me-` string in 
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'alfresco_ruby'
 # setup authorization
-SwaggerClient.configure do |config|
+Alfresco.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::PeopleApi.new
+api_instance = Alfresco::PeopleApi.new
 
 person_id = "person_id_example" # String | The identifier of a person.
 
@@ -215,7 +215,7 @@ begin
   #Get a person
   result = api_instance.get_person(person_id, opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue Alfresco::ApiError => e
   puts "Exception when calling PeopleApi->get_person: #{e}"
 end
 ```
@@ -252,15 +252,15 @@ List people
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'alfresco_ruby'
 # setup authorization
-SwaggerClient.configure do |config|
+Alfresco.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::PeopleApi.new
+api_instance = Alfresco::PeopleApi.new
 
 opts = { 
   skip_count: 0, # Integer | The number of entities that exist in the collection before those included in this list.  If not supplied then the default value is 0. 
@@ -274,7 +274,7 @@ begin
   #List people
   result = api_instance.list_people(opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue Alfresco::ApiError => e
   puts "Exception when calling PeopleApi->list_people: #{e}"
 end
 ```
@@ -314,25 +314,25 @@ Request password reset
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'alfresco_ruby'
 # setup authorization
-SwaggerClient.configure do |config|
+Alfresco.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::PeopleApi.new
+api_instance = Alfresco::PeopleApi.new
 
 person_id = "person_id_example" # String | The identifier of a person.
 
-client_body = SwaggerClient::ClientBody.new # ClientBody | The client name to send email with app-specific url.
+client_body = Alfresco::ClientBody.new # ClientBody | The client name to send email with app-specific url.
 
 
 begin
   #Request password reset
   api_instance.request_password_reset(person_idclient_body)
-rescue SwaggerClient::ApiError => e
+rescue Alfresco::ApiError => e
   puts "Exception when calling PeopleApi->request_password_reset: #{e}"
 end
 ```
@@ -369,25 +369,25 @@ Reset password
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'alfresco_ruby'
 # setup authorization
-SwaggerClient.configure do |config|
+Alfresco.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::PeopleApi.new
+api_instance = Alfresco::PeopleApi.new
 
 person_id = "person_id_example" # String | The identifier of a person.
 
-password_reset_body = SwaggerClient::PasswordResetBody.new # PasswordResetBody | The reset password details
+password_reset_body = Alfresco::PasswordResetBody.new # PasswordResetBody | The reset password details
 
 
 begin
   #Reset password
   api_instance.reset_password(person_idpassword_reset_body)
-rescue SwaggerClient::ApiError => e
+rescue Alfresco::ApiError => e
   puts "Exception when calling PeopleApi->reset_password: #{e}"
 end
 ```
@@ -424,15 +424,15 @@ Update avatar image
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'alfresco_ruby'
 # setup authorization
-SwaggerClient.configure do |config|
+Alfresco.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::PeopleApi.new
+api_instance = Alfresco::PeopleApi.new
 
 person_id = "person_id_example" # String | The identifier of a person.
 
@@ -442,7 +442,7 @@ content_body_update = "B" # String | The binary content
 begin
   #Update avatar image
   api_instance.update_avatar_image(person_idcontent_body_update)
-rescue SwaggerClient::ApiError => e
+rescue Alfresco::ApiError => e
   puts "Exception when calling PeopleApi->update_avatar_image: #{e}"
 end
 ```
@@ -479,19 +479,19 @@ Update person
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'alfresco_ruby'
 # setup authorization
-SwaggerClient.configure do |config|
+Alfresco.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::PeopleApi.new
+api_instance = Alfresco::PeopleApi.new
 
 person_id = "person_id_example" # String | The identifier of a person.
 
-person_body_update = SwaggerClient::PersonBodyUpdate.new # PersonBodyUpdate | The person details.
+person_body_update = Alfresco::PersonBodyUpdate.new # PersonBodyUpdate | The person details.
 
 opts = { 
   fields: ["fields_example"] # Array<String> | A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. 
@@ -501,7 +501,7 @@ begin
   #Update person
   result = api_instance.update_person(person_idperson_body_update, opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue Alfresco::ApiError => e
   puts "Exception when calling PeopleApi->update_person: #{e}"
 end
 ```

@@ -1,4 +1,4 @@
-# SwaggerClient::NodeBodyCreateAssociation
+# Alfresco::NodeBodyCreateAssociation
 
 ## Properties
 Name | Type | Description | Notes

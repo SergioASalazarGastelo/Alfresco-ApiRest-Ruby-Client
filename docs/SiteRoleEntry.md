@@ -1,4 +1,4 @@
-# SwaggerClient::SiteRoleEntry
+# Alfresco::SiteRoleEntry
 
 ## Properties
 Name | Type | Description | Notes

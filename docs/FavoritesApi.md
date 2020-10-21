@@ -1,4 +1,4 @@
-# SwaggerClient::FavoritesApi
+# Alfresco::FavoritesApi
 
 All URIs are relative to *https://localhost/alfresco/api/-default-/public/alfresco/versions/1*
 
@@ -24,19 +24,19 @@ Favorite a **site**, **file**, or **folder** in the repository.  You can use the
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'alfresco_ruby'
 # setup authorization
-SwaggerClient.configure do |config|
+Alfresco.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::FavoritesApi.new
+api_instance = Alfresco::FavoritesApi.new
 
 person_id = "person_id_example" # String | The identifier of a person.
 
-favorite_body_create = SwaggerClient::FavoriteBodyCreate.new # FavoriteBodyCreate | An object identifying the entity to be favorited.   The object consists of a single property which is an object with the name `site`, `file`, or `folder`.  The content of that object is the `guid` of the target entity.  For example, to favorite a file the following body would be used:  ```JSON {    \"target\": {       \"file\": {          \"guid\": \"abcde-01234-....\"       }    } } ``` 
+favorite_body_create = Alfresco::FavoriteBodyCreate.new # FavoriteBodyCreate | An object identifying the entity to be favorited.   The object consists of a single property which is an object with the name `site`, `file`, or `folder`.  The content of that object is the `guid` of the target entity.  For example, to favorite a file the following body would be used:  ```JSON {    \"target\": {       \"file\": {          \"guid\": \"abcde-01234-....\"       }    } } ``` 
 
 opts = { 
   include: ["include_example"], # Array<String> | Returns additional information about favorites, the following optional fields can be requested: * path (note, this only applies to files and folders) * properties 
@@ -47,7 +47,7 @@ begin
   #Create a favorite
   result = api_instance.create_favorite(person_idfavorite_body_create, opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue Alfresco::ApiError => e
   puts "Exception when calling FavoritesApi->create_favorite: #{e}"
 end
 ```
@@ -86,19 +86,19 @@ Create a site favorite
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'alfresco_ruby'
 # setup authorization
-SwaggerClient.configure do |config|
+Alfresco.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::FavoritesApi.new
+api_instance = Alfresco::FavoritesApi.new
 
 person_id = "person_id_example" # String | The identifier of a person.
 
-favorite_site_body_create = SwaggerClient::FavoriteSiteBodyCreate.new # FavoriteSiteBodyCreate | The id of the site to favorite.
+favorite_site_body_create = Alfresco::FavoriteSiteBodyCreate.new # FavoriteSiteBodyCreate | The id of the site to favorite.
 
 opts = { 
   fields: ["fields_example"] # Array<String> | A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. 
@@ -108,7 +108,7 @@ begin
   #Create a site favorite
   result = api_instance.create_site_favorite(person_idfavorite_site_body_create, opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue Alfresco::ApiError => e
   puts "Exception when calling FavoritesApi->create_site_favorite: #{e}"
 end
 ```
@@ -146,15 +146,15 @@ Deletes **favoriteId** as a favorite of person **personId**.  You can use the `-
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'alfresco_ruby'
 # setup authorization
-SwaggerClient.configure do |config|
+Alfresco.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::FavoritesApi.new
+api_instance = Alfresco::FavoritesApi.new
 
 person_id = "person_id_example" # String | The identifier of a person.
 
@@ -164,7 +164,7 @@ favorite_id = "favorite_id_example" # String | The identifier of a favorite.
 begin
   #Delete a favorite
   api_instance.delete_favorite(person_idfavorite_id)
-rescue SwaggerClient::ApiError => e
+rescue Alfresco::ApiError => e
   puts "Exception when calling FavoritesApi->delete_favorite: #{e}"
 end
 ```
@@ -201,15 +201,15 @@ Delete a site favorite
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'alfresco_ruby'
 # setup authorization
-SwaggerClient.configure do |config|
+Alfresco.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::FavoritesApi.new
+api_instance = Alfresco::FavoritesApi.new
 
 person_id = "person_id_example" # String | The identifier of a person.
 
@@ -219,7 +219,7 @@ site_id = "site_id_example" # String | The identifier of a site.
 begin
   #Delete a site favorite
   api_instance.delete_site_favorite(person_idsite_id, )
-rescue SwaggerClient::ApiError => e
+rescue Alfresco::ApiError => e
   puts "Exception when calling FavoritesApi->delete_site_favorite: #{e}"
 end
 ```
@@ -256,15 +256,15 @@ Gets favorite **favoriteId** for person **personId**.  You can use the `-me-` st
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'alfresco_ruby'
 # setup authorization
-SwaggerClient.configure do |config|
+Alfresco.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::FavoritesApi.new
+api_instance = Alfresco::FavoritesApi.new
 
 person_id = "person_id_example" # String | The identifier of a person.
 
@@ -279,7 +279,7 @@ begin
   #Get a favorite
   result = api_instance.get_favorite(person_idfavorite_id, opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue Alfresco::ApiError => e
   puts "Exception when calling FavoritesApi->get_favorite: #{e}"
 end
 ```
@@ -318,15 +318,15 @@ Get a favorite site
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'alfresco_ruby'
 # setup authorization
-SwaggerClient.configure do |config|
+Alfresco.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::FavoritesApi.new
+api_instance = Alfresco::FavoritesApi.new
 
 person_id = "person_id_example" # String | The identifier of a person.
 
@@ -340,7 +340,7 @@ begin
   #Get a favorite site
   result = api_instance.get_favorite_site(person_idsite_id, , opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue Alfresco::ApiError => e
   puts "Exception when calling FavoritesApi->get_favorite_site: #{e}"
 end
 ```
@@ -378,15 +378,15 @@ List favorite sites
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'alfresco_ruby'
 # setup authorization
-SwaggerClient.configure do |config|
+Alfresco.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::FavoritesApi.new
+api_instance = Alfresco::FavoritesApi.new
 
 person_id = "person_id_example" # String | The identifier of a person.
 
@@ -400,7 +400,7 @@ begin
   #List favorite sites
   result = api_instance.list_favorite_sites_for_person(person_id, opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue Alfresco::ApiError => e
   puts "Exception when calling FavoritesApi->list_favorite_sites_for_person: #{e}"
 end
 ```
@@ -439,15 +439,15 @@ Gets a list of favorites for person **personId**.  You can use the `-me-` string
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'alfresco_ruby'
 # setup authorization
-SwaggerClient.configure do |config|
+Alfresco.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::FavoritesApi.new
+api_instance = Alfresco::FavoritesApi.new
 
 person_id = "person_id_example" # String | The identifier of a person.
 
@@ -464,7 +464,7 @@ begin
   #List favorites
   result = api_instance.list_favorites(person_id, opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue Alfresco::ApiError => e
   puts "Exception when calling FavoritesApi->list_favorites: #{e}"
 end
 ```

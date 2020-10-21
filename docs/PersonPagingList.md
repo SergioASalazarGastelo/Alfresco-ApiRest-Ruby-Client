@@ -1,4 +1,4 @@
-# SwaggerClient::PersonPagingList
+# Alfresco::PersonPagingList
 
 ## Properties
 Name | Type | Description | Notes

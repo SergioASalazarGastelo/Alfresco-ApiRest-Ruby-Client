@@ -1,4 +1,4 @@
-# SwaggerClient::PersonNetworkPaging
+# Alfresco::PersonNetworkPaging
 
 ## Properties
 Name | Type | Description | Notes

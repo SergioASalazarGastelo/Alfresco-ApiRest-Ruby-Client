@@ -1,4 +1,4 @@
-# SwaggerClient::PersonBodyUpdate
+# Alfresco::PersonBodyUpdate
 
 ## Properties
 Name | Type | Description | Notes

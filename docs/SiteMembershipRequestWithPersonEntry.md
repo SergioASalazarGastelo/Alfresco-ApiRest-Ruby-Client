@@ -1,4 +1,4 @@
-# SwaggerClient::SiteMembershipRequestWithPersonEntry
+# Alfresco::SiteMembershipRequestWithPersonEntry
 
 ## Properties
 Name | Type | Description | Notes

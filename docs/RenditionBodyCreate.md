@@ -1,4 +1,4 @@
-# SwaggerClient::RenditionBodyCreate
+# Alfresco::RenditionBodyCreate
 
 ## Properties
 Name | Type | Description | Notes

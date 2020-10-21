@@ -1,4 +1,4 @@
-# SwaggerClient::RenditionPaging
+# Alfresco::RenditionPaging
 
 ## Properties
 Name | Type | Description | Notes

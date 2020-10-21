@@ -1,4 +1,4 @@
-# SwaggerClient::PasswordResetBody
+# Alfresco::PasswordResetBody
 
 ## Properties
 Name | Type | Description | Notes

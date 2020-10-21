@@ -1,4 +1,4 @@
-# SwaggerClient::RevertBody
+# Alfresco::RevertBody
 
 ## Properties
 Name | Type | Description | Notes

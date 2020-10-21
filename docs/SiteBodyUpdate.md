@@ -1,4 +1,4 @@
-# SwaggerClient::SiteBodyUpdate
+# Alfresco::SiteBodyUpdate
 
 ## Properties
 Name | Type | Description | Notes

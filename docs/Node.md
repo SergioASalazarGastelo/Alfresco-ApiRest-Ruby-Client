@@ -1,4 +1,4 @@
-# SwaggerClient::Node
+# Alfresco::Node
 
 ## Properties
 Name | Type | Description | Notes

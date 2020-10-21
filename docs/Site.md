@@ -1,4 +1,4 @@
-# SwaggerClient::Site
+# Alfresco::Site
 
 ## Properties
 Name | Type | Description | Notes

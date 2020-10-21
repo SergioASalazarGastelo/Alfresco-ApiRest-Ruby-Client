@@ -1,4 +1,4 @@
-# SwaggerClient::NodeChildAssociationPaging
+# Alfresco::NodeChildAssociationPaging
 
 ## Properties
 Name | Type | Description | Notes

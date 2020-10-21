@@ -1,4 +1,4 @@
-# SwaggerClient::SharedLinkBodyCreate
+# Alfresco::SharedLinkBodyCreate
 
 ## Properties
 Name | Type | Description | Notes

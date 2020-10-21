@@ -1,4 +1,4 @@
-# SwaggerClient::PathInfo
+# Alfresco::PathInfo
 
 ## Properties
 Name | Type | Description | Notes

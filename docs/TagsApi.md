@@ -1,4 +1,4 @@
-# SwaggerClient::TagsApi
+# Alfresco::TagsApi
 
 All URIs are relative to *https://localhost/alfresco/api/-default-/public/alfresco/versions/1*
 
@@ -22,19 +22,19 @@ Creates a tag on the node **nodeId**. You specify the tag in a JSON body like th
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'alfresco_ruby'
 # setup authorization
-SwaggerClient.configure do |config|
+Alfresco.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TagsApi.new
+api_instance = Alfresco::TagsApi.new
 
 node_id = "node_id_example" # String | The identifier of a node.
 
-tag_body_create = SwaggerClient::TagBody.new # TagBody | The new tag
+tag_body_create = Alfresco::TagBody.new # TagBody | The new tag
 
 opts = { 
   fields: ["fields_example"] # Array<String> | A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. 
@@ -44,7 +44,7 @@ begin
   #Create a tag for a node
   result = api_instance.create_tag_for_node(node_id, tag_body_create, opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue Alfresco::ApiError => e
   puts "Exception when calling TagsApi->create_tag_for_node: #{e}"
 end
 ```
@@ -82,15 +82,15 @@ Deletes tag **tagId** from node **nodeId**.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'alfresco_ruby'
 # setup authorization
-SwaggerClient.configure do |config|
+Alfresco.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TagsApi.new
+api_instance = Alfresco::TagsApi.new
 
 node_id = "node_id_example" # String | The identifier of a node.
 
@@ -100,7 +100,7 @@ tag_id = "tag_id_example" # String | The identifier of a tag.
 begin
   #Delete a tag from a node
   api_instance.delete_tag_from_node(node_id, tag_id, )
-rescue SwaggerClient::ApiError => e
+rescue Alfresco::ApiError => e
   puts "Exception when calling TagsApi->delete_tag_from_node: #{e}"
 end
 ```
@@ -137,15 +137,15 @@ Get a specific tag with **tagId**.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'alfresco_ruby'
 # setup authorization
-SwaggerClient.configure do |config|
+Alfresco.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TagsApi.new
+api_instance = Alfresco::TagsApi.new
 
 tag_id = "tag_id_example" # String | The identifier of a tag.
 
@@ -157,7 +157,7 @@ begin
   #Get a tag
   result = api_instance.get_tag(tag_id, , opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue Alfresco::ApiError => e
   puts "Exception when calling TagsApi->get_tag: #{e}"
 end
 ```
@@ -194,15 +194,15 @@ Gets a list of tags in this repository.  You can use the **include** parameter t
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'alfresco_ruby'
 # setup authorization
-SwaggerClient.configure do |config|
+Alfresco.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TagsApi.new
+api_instance = Alfresco::TagsApi.new
 
 opts = { 
   skip_count: 0, # Integer | The number of entities that exist in the collection before those included in this list.  If not supplied then the default value is 0. 
@@ -215,7 +215,7 @@ begin
   #List tags
   result = api_instance.list_tags(opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue Alfresco::ApiError => e
   puts "Exception when calling TagsApi->list_tags: #{e}"
 end
 ```
@@ -254,15 +254,15 @@ Gets a list of tags for node **nodeId**.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'alfresco_ruby'
 # setup authorization
-SwaggerClient.configure do |config|
+Alfresco.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TagsApi.new
+api_instance = Alfresco::TagsApi.new
 
 node_id = "node_id_example" # String | The identifier of a node.
 
@@ -276,7 +276,7 @@ begin
   #List tags for a node
   result = api_instance.list_tags_for_node(node_id, , opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue Alfresco::ApiError => e
   puts "Exception when calling TagsApi->list_tags_for_node: #{e}"
 end
 ```
@@ -315,19 +315,19 @@ Updates the tag **tagId**.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'alfresco_ruby'
 # setup authorization
-SwaggerClient.configure do |config|
+Alfresco.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TagsApi.new
+api_instance = Alfresco::TagsApi.new
 
 tag_id = "tag_id_example" # String | The identifier of a tag.
 
-tag_body_update = SwaggerClient::TagBody.new # TagBody | The updated tag
+tag_body_update = Alfresco::TagBody.new # TagBody | The updated tag
 
 opts = { 
   fields: ["fields_example"] # Array<String> | A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. 
@@ -337,7 +337,7 @@ begin
   #Update a tag
   result = api_instance.update_tag(tag_id, tag_body_update, opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue Alfresco::ApiError => e
   puts "Exception when calling TagsApi->update_tag: #{e}"
 end
 ```

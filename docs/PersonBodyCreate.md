@@ -1,4 +1,4 @@
-# SwaggerClient::PersonBodyCreate
+# Alfresco::PersonBodyCreate
 
 ## Properties
 Name | Type | Description | Notes

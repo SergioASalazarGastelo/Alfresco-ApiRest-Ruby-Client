@@ -1,4 +1,4 @@
-# SwaggerClient::SiteContainerPaging
+# Alfresco::SiteContainerPaging
 
 ## Properties
 Name | Type | Description | Notes

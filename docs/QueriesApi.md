@@ -1,4 +1,4 @@
-# SwaggerClient::QueriesApi
+# Alfresco::QueriesApi
 
 All URIs are relative to *https://localhost/alfresco/api/-default-/public/alfresco/versions/1*
 
@@ -19,15 +19,15 @@ Find nodes
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'alfresco_ruby'
 # setup authorization
-SwaggerClient.configure do |config|
+Alfresco.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::QueriesApi.new
+api_instance = Alfresco::QueriesApi.new
 
 term = "term_example" # String | The term to search for.
 
@@ -45,7 +45,7 @@ begin
   #Find nodes
   result = api_instance.find_nodes(term, opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue Alfresco::ApiError => e
   puts "Exception when calling QueriesApi->find_nodes: #{e}"
 end
 ```
@@ -88,15 +88,15 @@ Find people
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'alfresco_ruby'
 # setup authorization
-SwaggerClient.configure do |config|
+Alfresco.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::QueriesApi.new
+api_instance = Alfresco::QueriesApi.new
 
 term = "term_example" # String | The term to search for. 
 
@@ -111,7 +111,7 @@ begin
   #Find people
   result = api_instance.find_people(term, opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue Alfresco::ApiError => e
   puts "Exception when calling QueriesApi->find_people: #{e}"
 end
 ```
@@ -151,15 +151,15 @@ Find sites
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'alfresco_ruby'
 # setup authorization
-SwaggerClient.configure do |config|
+Alfresco.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::QueriesApi.new
+api_instance = Alfresco::QueriesApi.new
 
 term = "term_example" # String | The term to search for.
 
@@ -174,7 +174,7 @@ begin
   #Find sites
   result = api_instance.find_sites(term, opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue Alfresco::ApiError => e
   puts "Exception when calling QueriesApi->find_sites: #{e}"
 end
 ```

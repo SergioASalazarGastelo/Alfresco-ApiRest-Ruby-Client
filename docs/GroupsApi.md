@@ -1,4 +1,4 @@
-# SwaggerClient::GroupsApi
+# Alfresco::GroupsApi
 
 All URIs are relative to *https://localhost/alfresco/api/-default-/public/alfresco/versions/1*
 
@@ -25,17 +25,17 @@ Create a group
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'alfresco_ruby'
 # setup authorization
-SwaggerClient.configure do |config|
+Alfresco.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::GroupsApi.new
+api_instance = Alfresco::GroupsApi.new
 
-group_body_create = SwaggerClient::GroupBodyCreate.new # GroupBodyCreate | The group to create.
+group_body_create = Alfresco::GroupBodyCreate.new # GroupBodyCreate | The group to create.
 
 opts = { 
   include: ["include_example"], # Array<String> | Returns additional information about the group. The following optional fields can be requested: * parentIds * zones 
@@ -46,7 +46,7 @@ begin
   #Create a group
   result = api_instance.create_group(group_body_create, opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue Alfresco::ApiError => e
   puts "Exception when calling GroupsApi->create_group: #{e}"
 end
 ```
@@ -84,19 +84,19 @@ Create a group membership
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'alfresco_ruby'
 # setup authorization
-SwaggerClient.configure do |config|
+Alfresco.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::GroupsApi.new
+api_instance = Alfresco::GroupsApi.new
 
 group_id = "group_id_example" # String | The identifier of a group.
 
-group_membership_body_create = SwaggerClient::GroupMembershipBodyCreate.new # GroupMembershipBodyCreate | The group membership to add (person or sub-group).
+group_membership_body_create = Alfresco::GroupMembershipBodyCreate.new # GroupMembershipBodyCreate | The group membership to add (person or sub-group).
 
 opts = { 
   fields: ["fields_example"] # Array<String> | A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. 
@@ -106,7 +106,7 @@ begin
   #Create a group membership
   result = api_instance.create_group_membership(group_id, group_membership_body_create, opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue Alfresco::ApiError => e
   puts "Exception when calling GroupsApi->create_group_membership: #{e}"
 end
 ```
@@ -144,15 +144,15 @@ Delete a group
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'alfresco_ruby'
 # setup authorization
-SwaggerClient.configure do |config|
+Alfresco.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::GroupsApi.new
+api_instance = Alfresco::GroupsApi.new
 
 group_id = "group_id_example" # String | The identifier of a group.
 
@@ -163,7 +163,7 @@ opts = {
 begin
   #Delete a group
   api_instance.delete_group(group_id, , opts)
-rescue SwaggerClient::ApiError => e
+rescue Alfresco::ApiError => e
   puts "Exception when calling GroupsApi->delete_group: #{e}"
 end
 ```
@@ -200,15 +200,15 @@ Delete a group membership
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'alfresco_ruby'
 # setup authorization
-SwaggerClient.configure do |config|
+Alfresco.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::GroupsApi.new
+api_instance = Alfresco::GroupsApi.new
 
 group_id = "group_id_example" # String | The identifier of a group.
 
@@ -218,7 +218,7 @@ group_member_id = "group_member_id_example" # String | The identifier of a perso
 begin
   #Delete a group membership
   api_instance.delete_group_membership(group_id, group_member_id)
-rescue SwaggerClient::ApiError => e
+rescue Alfresco::ApiError => e
   puts "Exception when calling GroupsApi->delete_group_membership: #{e}"
 end
 ```
@@ -255,15 +255,15 @@ Get group details
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'alfresco_ruby'
 # setup authorization
-SwaggerClient.configure do |config|
+Alfresco.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::GroupsApi.new
+api_instance = Alfresco::GroupsApi.new
 
 group_id = "group_id_example" # String | The identifier of a group.
 
@@ -276,7 +276,7 @@ begin
   #Get group details
   result = api_instance.get_group(group_id, , opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue Alfresco::ApiError => e
   puts "Exception when calling GroupsApi->get_group: #{e}"
 end
 ```
@@ -314,15 +314,15 @@ List memberships of a group
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'alfresco_ruby'
 # setup authorization
-SwaggerClient.configure do |config|
+Alfresco.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::GroupsApi.new
+api_instance = Alfresco::GroupsApi.new
 
 group_id = "group_id_example" # String | The identifier of a group.
 
@@ -338,7 +338,7 @@ begin
   #List memberships of a group
   result = api_instance.list_group_memberships(group_id, , opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue Alfresco::ApiError => e
   puts "Exception when calling GroupsApi->list_group_memberships: #{e}"
 end
 ```
@@ -379,15 +379,15 @@ List group memberships
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'alfresco_ruby'
 # setup authorization
-SwaggerClient.configure do |config|
+Alfresco.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::GroupsApi.new
+api_instance = Alfresco::GroupsApi.new
 
 person_id = "person_id_example" # String | The identifier of a person.
 
@@ -404,7 +404,7 @@ begin
   #List group memberships
   result = api_instance.list_group_memberships_for_person(person_id, opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue Alfresco::ApiError => e
   puts "Exception when calling GroupsApi->list_group_memberships_for_person: #{e}"
 end
 ```
@@ -446,15 +446,15 @@ List groups
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'alfresco_ruby'
 # setup authorization
-SwaggerClient.configure do |config|
+Alfresco.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::GroupsApi.new
+api_instance = Alfresco::GroupsApi.new
 
 opts = { 
   skip_count: 0, # Integer | The number of entities that exist in the collection before those included in this list.  If not supplied then the default value is 0. 
@@ -469,7 +469,7 @@ begin
   #List groups
   result = api_instance.list_groups(opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue Alfresco::ApiError => e
   puts "Exception when calling GroupsApi->list_groups: #{e}"
 end
 ```
@@ -510,19 +510,19 @@ Update group details
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'alfresco_ruby'
 # setup authorization
-SwaggerClient.configure do |config|
+Alfresco.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::GroupsApi.new
+api_instance = Alfresco::GroupsApi.new
 
 group_id = "group_id_example" # String | The identifier of a group.
 
-group_body_update = SwaggerClient::GroupBodyUpdate.new # GroupBodyUpdate | The group information to update.
+group_body_update = Alfresco::GroupBodyUpdate.new # GroupBodyUpdate | The group information to update.
 
 opts = { 
   include: ["include_example"], # Array<String> | Returns additional information about the group. The following optional fields can be requested: * parentIds * zones 
@@ -533,7 +533,7 @@ begin
   #Update group details
   result = api_instance.update_group(group_id, group_body_update, opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue Alfresco::ApiError => e
   puts "Exception when calling GroupsApi->update_group: #{e}"
 end
 ```

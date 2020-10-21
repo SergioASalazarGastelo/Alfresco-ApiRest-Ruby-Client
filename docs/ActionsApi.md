@@ -1,4 +1,4 @@
-# SwaggerClient::ActionsApi
+# Alfresco::ActionsApi
 
 All URIs are relative to *https://localhost/alfresco/api/-default-/public/alfresco/versions/1*
 
@@ -20,15 +20,15 @@ Retrieve the details of an action definition
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'alfresco_ruby'
 # setup authorization
-SwaggerClient.configure do |config|
+Alfresco.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::ActionsApi.new
+api_instance = Alfresco::ActionsApi.new
 
 action_definition_id = "action_definition_id_example" # String | The identifier of an action definition.
 
@@ -37,7 +37,7 @@ begin
   #Retrieve the details of an action definition
   result = api_instance.action_details(action_definition_id)
   p result
-rescue SwaggerClient::ApiError => e
+rescue Alfresco::ApiError => e
   puts "Exception when calling ActionsApi->action_details: #{e}"
 end
 ```
@@ -73,24 +73,24 @@ Execute an action
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'alfresco_ruby'
 # setup authorization
-SwaggerClient.configure do |config|
+Alfresco.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::ActionsApi.new
+api_instance = Alfresco::ActionsApi.new
 
-action_body_exec = SwaggerClient::ActionBodyExec.new # ActionBodyExec | Action execution details
+action_body_exec = Alfresco::ActionBodyExec.new # ActionBodyExec | Action execution details
 
 
 begin
   #Execute an action
   result = api_instance.action_exec(action_body_exec)
   p result
-rescue SwaggerClient::ApiError => e
+rescue Alfresco::ApiError => e
   puts "Exception when calling ActionsApi->action_exec: #{e}"
 end
 ```
@@ -126,15 +126,15 @@ Retrieve list of available actions
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'alfresco_ruby'
 # setup authorization
-SwaggerClient.configure do |config|
+Alfresco.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::ActionsApi.new
+api_instance = Alfresco::ActionsApi.new
 
 opts = { 
   skip_count: 0, # Integer | The number of entities that exist in the collection before those included in this list.  If not supplied then the default value is 0. 
@@ -147,7 +147,7 @@ begin
   #Retrieve list of available actions
   result = api_instance.list_actions(opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue Alfresco::ApiError => e
   puts "Exception when calling ActionsApi->list_actions: #{e}"
 end
 ```
@@ -186,15 +186,15 @@ Retrieve actions for a node
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'alfresco_ruby'
 # setup authorization
-SwaggerClient.configure do |config|
+Alfresco.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::ActionsApi.new
+api_instance = Alfresco::ActionsApi.new
 
 node_id = "node_id_example" # String | The identifier of a node.
 
@@ -209,7 +209,7 @@ begin
   #Retrieve actions for a node
   result = api_instance.node_actions(node_id, , opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue Alfresco::ApiError => e
   puts "Exception when calling ActionsApi->node_actions: #{e}"
 end
 ```

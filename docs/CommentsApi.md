@@ -1,4 +1,4 @@
-# SwaggerClient::CommentsApi
+# Alfresco::CommentsApi
 
 All URIs are relative to *https://localhost/alfresco/api/-default-/public/alfresco/versions/1*
 
@@ -20,19 +20,19 @@ Creates a comment on node **nodeId**. You specify the comment in a JSON body lik
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'alfresco_ruby'
 # setup authorization
-SwaggerClient.configure do |config|
+Alfresco.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::CommentsApi.new
+api_instance = Alfresco::CommentsApi.new
 
 node_id = "node_id_example" # String | The identifier of a node.
 
-comment_body_create = SwaggerClient::CommentBody.new # CommentBody | The comment text. Note that you can also provide a list of comments.
+comment_body_create = Alfresco::CommentBody.new # CommentBody | The comment text. Note that you can also provide a list of comments.
 
 opts = { 
   fields: ["fields_example"] # Array<String> | A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. 
@@ -42,7 +42,7 @@ begin
   #Create a comment
   result = api_instance.create_comment(node_id, comment_body_create, opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue Alfresco::ApiError => e
   puts "Exception when calling CommentsApi->create_comment: #{e}"
 end
 ```
@@ -80,15 +80,15 @@ Deletes the comment **commentId** from node **nodeId**.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'alfresco_ruby'
 # setup authorization
-SwaggerClient.configure do |config|
+Alfresco.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::CommentsApi.new
+api_instance = Alfresco::CommentsApi.new
 
 node_id = "node_id_example" # String | The identifier of a node.
 
@@ -98,7 +98,7 @@ comment_id = "comment_id_example" # String | The identifier of a comment.
 begin
   #Delete a comment
   api_instance.delete_comment(node_id, comment_id)
-rescue SwaggerClient::ApiError => e
+rescue Alfresco::ApiError => e
   puts "Exception when calling CommentsApi->delete_comment: #{e}"
 end
 ```
@@ -135,15 +135,15 @@ Gets a list of comments for the node **nodeId**, sorted chronologically with the
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'alfresco_ruby'
 # setup authorization
-SwaggerClient.configure do |config|
+Alfresco.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::CommentsApi.new
+api_instance = Alfresco::CommentsApi.new
 
 node_id = "node_id_example" # String | The identifier of a node.
 
@@ -157,7 +157,7 @@ begin
   #List comments
   result = api_instance.list_comments(node_id, , opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue Alfresco::ApiError => e
   puts "Exception when calling CommentsApi->list_comments: #{e}"
 end
 ```
@@ -196,21 +196,21 @@ Updates an existing comment **commentId** on node **nodeId**.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'alfresco_ruby'
 # setup authorization
-SwaggerClient.configure do |config|
+Alfresco.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::CommentsApi.new
+api_instance = Alfresco::CommentsApi.new
 
 node_id = "node_id_example" # String | The identifier of a node.
 
 comment_id = "comment_id_example" # String | The identifier of a comment.
 
-comment_body_update = SwaggerClient::CommentBody.new # CommentBody | The JSON representing the comment to be updated.
+comment_body_update = Alfresco::CommentBody.new # CommentBody | The JSON representing the comment to be updated.
 
 opts = { 
   fields: ["fields_example"] # Array<String> | A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. 
@@ -220,7 +220,7 @@ begin
   #Update a comment
   result = api_instance.update_comment(node_id, comment_idcomment_body_update, opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue Alfresco::ApiError => e
   puts "Exception when calling CommentsApi->update_comment: #{e}"
 end
 ```

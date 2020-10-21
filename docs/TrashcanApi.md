@@ -1,4 +1,4 @@
-# SwaggerClient::TrashcanApi
+# Alfresco::TrashcanApi
 
 All URIs are relative to *https://localhost/alfresco/api/-default-/public/alfresco/versions/1*
 
@@ -24,15 +24,15 @@ Permanently delete a deleted node
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'alfresco_ruby'
 # setup authorization
-SwaggerClient.configure do |config|
+Alfresco.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TrashcanApi.new
+api_instance = Alfresco::TrashcanApi.new
 
 node_id = "node_id_example" # String | The identifier of a node.
 
@@ -40,7 +40,7 @@ node_id = "node_id_example" # String | The identifier of a node.
 begin
   #Permanently delete a deleted node
   api_instance.delete_deleted_node(node_id, )
-rescue SwaggerClient::ApiError => e
+rescue Alfresco::ApiError => e
   puts "Exception when calling TrashcanApi->delete_deleted_node: #{e}"
 end
 ```
@@ -76,15 +76,15 @@ Get rendition information for a deleted node
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'alfresco_ruby'
 # setup authorization
-SwaggerClient.configure do |config|
+Alfresco.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TrashcanApi.new
+api_instance = Alfresco::TrashcanApi.new
 
 node_id = "node_id_example" # String | The identifier of a node.
 
@@ -95,7 +95,7 @@ begin
   #Get rendition information for a deleted node
   result = api_instance.get_archived_node_rendition(node_id, rendition_id)
   p result
-rescue SwaggerClient::ApiError => e
+rescue Alfresco::ApiError => e
   puts "Exception when calling TrashcanApi->get_archived_node_rendition: #{e}"
 end
 ```
@@ -132,15 +132,15 @@ Get rendition content of a deleted node
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'alfresco_ruby'
 # setup authorization
-SwaggerClient.configure do |config|
+Alfresco.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TrashcanApi.new
+api_instance = Alfresco::TrashcanApi.new
 
 node_id = "node_id_example" # String | The identifier of a node.
 
@@ -157,7 +157,7 @@ begin
   #Get rendition content of a deleted node
   result = api_instance.get_archived_node_rendition_content(node_id, rendition_id, opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue Alfresco::ApiError => e
   puts "Exception when calling TrashcanApi->get_archived_node_rendition_content: #{e}"
 end
 ```
@@ -198,15 +198,15 @@ Get a deleted node
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'alfresco_ruby'
 # setup authorization
-SwaggerClient.configure do |config|
+Alfresco.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TrashcanApi.new
+api_instance = Alfresco::TrashcanApi.new
 
 node_id = "node_id_example" # String | The identifier of a node.
 
@@ -218,7 +218,7 @@ begin
   #Get a deleted node
   result = api_instance.get_deleted_node(node_id, , opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue Alfresco::ApiError => e
   puts "Exception when calling TrashcanApi->get_deleted_node: #{e}"
 end
 ```
@@ -255,15 +255,15 @@ Get deleted node content
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'alfresco_ruby'
 # setup authorization
-SwaggerClient.configure do |config|
+Alfresco.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TrashcanApi.new
+api_instance = Alfresco::TrashcanApi.new
 
 node_id = "node_id_example" # String | The identifier of a node.
 
@@ -277,7 +277,7 @@ begin
   #Get deleted node content
   result = api_instance.get_deleted_node_content(node_id, , opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue Alfresco::ApiError => e
   puts "Exception when calling TrashcanApi->get_deleted_node_content: #{e}"
 end
 ```
@@ -316,15 +316,15 @@ List renditions for a deleted node
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'alfresco_ruby'
 # setup authorization
-SwaggerClient.configure do |config|
+Alfresco.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TrashcanApi.new
+api_instance = Alfresco::TrashcanApi.new
 
 node_id = "node_id_example" # String | The identifier of a node.
 
@@ -336,7 +336,7 @@ begin
   #List renditions for a deleted node
   result = api_instance.list_deleted_node_renditions(node_id, , opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue Alfresco::ApiError => e
   puts "Exception when calling TrashcanApi->list_deleted_node_renditions: #{e}"
 end
 ```
@@ -373,15 +373,15 @@ List deleted nodes
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'alfresco_ruby'
 # setup authorization
-SwaggerClient.configure do |config|
+Alfresco.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TrashcanApi.new
+api_instance = Alfresco::TrashcanApi.new
 
 opts = { 
   skip_count: 0, # Integer | The number of entities that exist in the collection before those included in this list.  If not supplied then the default value is 0. 
@@ -393,7 +393,7 @@ begin
   #List deleted nodes
   result = api_instance.list_deleted_nodes(opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue Alfresco::ApiError => e
   puts "Exception when calling TrashcanApi->list_deleted_nodes: #{e}"
 end
 ```
@@ -431,28 +431,28 @@ Restore a deleted node
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'alfresco_ruby'
 # setup authorization
-SwaggerClient.configure do |config|
+Alfresco.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TrashcanApi.new
+api_instance = Alfresco::TrashcanApi.new
 
 node_id = "node_id_example" # String | The identifier of a node.
 
 opts = { 
   fields: ["fields_example"] # Array<String> | A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. 
-  deleted_node_body_restore: SwaggerClient::DeletedNodeBodyRestore.new # DeletedNodeBodyRestore | The targetParentId if the node is restored to a new location.
+  deleted_node_body_restore: Alfresco::DeletedNodeBodyRestore.new # DeletedNodeBodyRestore | The targetParentId if the node is restored to a new location.
 }
 
 begin
   #Restore a deleted node
   result = api_instance.restore_deleted_node(node_id, , opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue Alfresco::ApiError => e
   puts "Exception when calling TrashcanApi->restore_deleted_node: #{e}"
 end
 ```

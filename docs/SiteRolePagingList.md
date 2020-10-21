@@ -1,4 +1,4 @@
-# SwaggerClient::SiteRolePagingList
+# Alfresco::SiteRolePagingList
 
 ## Properties
 Name | Type | Description | Notes

@@ -1,4 +1,4 @@
-# SwaggerClient::ProbeEntry
+# Alfresco::ProbeEntry
 
 ## Properties
 Name | Type | Description | Notes

@@ -1,4 +1,4 @@
-# SwaggerClient::ActionDefinitionListList
+# Alfresco::ActionDefinitionListList
 
 ## Properties
 Name | Type | Description | Notes

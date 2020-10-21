@@ -1,4 +1,4 @@
-# SwaggerClient::SiteMembershipRequestBodyCreate
+# Alfresco::SiteMembershipRequestBodyCreate
 
 ## Properties
 Name | Type | Description | Notes

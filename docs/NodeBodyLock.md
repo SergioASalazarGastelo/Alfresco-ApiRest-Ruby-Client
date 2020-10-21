@@ -1,4 +1,4 @@
-# SwaggerClient::NodeBodyLock
+# Alfresco::NodeBodyLock
 
 ## Properties
 Name | Type | Description | Notes

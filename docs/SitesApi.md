@@ -1,4 +1,4 @@
-# SwaggerClient::SitesApi
+# Alfresco::SitesApi
 
 All URIs are relative to *https://localhost/alfresco/api/-default-/public/alfresco/versions/1*
 
@@ -39,28 +39,28 @@ Approve a site membership request.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'alfresco_ruby'
 # setup authorization
-SwaggerClient.configure do |config|
+Alfresco.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::SitesApi.new
+api_instance = Alfresco::SitesApi.new
 
 site_id = "site_id_example" # String | The identifier of a site.
 
 invitee_id = "invitee_id_example" # String | The invitee user name.
 
 opts = { 
-  site_membership_approval_body: SwaggerClient::SiteMembershipApprovalBody.new # SiteMembershipApprovalBody | Accepting a request to join, optionally, allows assignment of a role to the user. 
+  site_membership_approval_body: Alfresco::SiteMembershipApprovalBody.new # SiteMembershipApprovalBody | Accepting a request to join, optionally, allows assignment of a role to the user. 
 }
 
 begin
   #Approve a site membership request
   api_instance.approve_site_membership_request(site_id, invitee_id, opts)
-rescue SwaggerClient::ApiError => e
+rescue Alfresco::ApiError => e
   puts "Exception when calling SitesApi->approve_site_membership_request: #{e}"
 end
 ```
@@ -98,17 +98,17 @@ Create a site
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'alfresco_ruby'
 # setup authorization
-SwaggerClient.configure do |config|
+Alfresco.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::SitesApi.new
+api_instance = Alfresco::SitesApi.new
 
-site_body_create = SwaggerClient::SiteBodyCreate.new # SiteBodyCreate | The site details
+site_body_create = Alfresco::SiteBodyCreate.new # SiteBodyCreate | The site details
 
 opts = { 
   skip_configuration: false, # BOOLEAN | Flag to indicate whether the Share-specific (surf) configuration files for the site should not be created.
@@ -120,7 +120,7 @@ begin
   #Create a site
   result = api_instance.create_site(site_body_create, opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue Alfresco::ApiError => e
   puts "Exception when calling SitesApi->create_site: #{e}"
 end
 ```
@@ -159,19 +159,19 @@ Creates a site membership for person **personId** on site **siteId**.  You can s
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'alfresco_ruby'
 # setup authorization
-SwaggerClient.configure do |config|
+Alfresco.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::SitesApi.new
+api_instance = Alfresco::SitesApi.new
 
 site_id = "site_id_example" # String | The identifier of a site.
 
-site_membership_body_create = SwaggerClient::SiteMembershipBodyCreate.new # SiteMembershipBodyCreate | The person to add and their role
+site_membership_body_create = Alfresco::SiteMembershipBodyCreate.new # SiteMembershipBodyCreate | The person to add and their role
 
 opts = { 
   fields: ["fields_example"] # Array<String> | A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. 
@@ -181,7 +181,7 @@ begin
   #Create a site membership
   result = api_instance.create_site_membership(site_id, site_membership_body_create, opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue Alfresco::ApiError => e
   puts "Exception when calling SitesApi->create_site_membership: #{e}"
 end
 ```
@@ -219,19 +219,19 @@ Create a site membership request for yourself on the site with the identifier of
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'alfresco_ruby'
 # setup authorization
-SwaggerClient.configure do |config|
+Alfresco.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::SitesApi.new
+api_instance = Alfresco::SitesApi.new
 
 person_id = "person_id_example" # String | The identifier of a person.
 
-site_membership_request_body_create = SwaggerClient::SiteMembershipRequestBodyCreate.new # SiteMembershipRequestBodyCreate | Site membership request details
+site_membership_request_body_create = Alfresco::SiteMembershipRequestBodyCreate.new # SiteMembershipRequestBodyCreate | Site membership request details
 
 opts = { 
   fields: ["fields_example"] # Array<String> | A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. 
@@ -241,7 +241,7 @@ begin
   #Create a site membership request
   result = api_instance.create_site_membership_request_for_person(person_idsite_membership_request_body_create, opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue Alfresco::ApiError => e
   puts "Exception when calling SitesApi->create_site_membership_request_for_person: #{e}"
 end
 ```
@@ -279,15 +279,15 @@ Delete a site
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'alfresco_ruby'
 # setup authorization
-SwaggerClient.configure do |config|
+Alfresco.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::SitesApi.new
+api_instance = Alfresco::SitesApi.new
 
 site_id = "site_id_example" # String | The identifier of a site.
 
@@ -298,7 +298,7 @@ opts = {
 begin
   #Delete a site
   api_instance.delete_site(site_id, , opts)
-rescue SwaggerClient::ApiError => e
+rescue Alfresco::ApiError => e
   puts "Exception when calling SitesApi->delete_site: #{e}"
 end
 ```
@@ -335,15 +335,15 @@ Deletes person **personId** as a member of site **siteId**.  You can use the `-m
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'alfresco_ruby'
 # setup authorization
-SwaggerClient.configure do |config|
+Alfresco.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::SitesApi.new
+api_instance = Alfresco::SitesApi.new
 
 site_id = "site_id_example" # String | The identifier of a site.
 
@@ -353,7 +353,7 @@ person_id = "person_id_example" # String | The identifier of a person.
 begin
   #Delete a site membership
   api_instance.delete_site_membership(site_id, person_id)
-rescue SwaggerClient::ApiError => e
+rescue Alfresco::ApiError => e
   puts "Exception when calling SitesApi->delete_site_membership: #{e}"
 end
 ```
@@ -390,15 +390,15 @@ Deletes person **personId** as a member of site **siteId**.  You can use the `-m
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'alfresco_ruby'
 # setup authorization
-SwaggerClient.configure do |config|
+Alfresco.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::SitesApi.new
+api_instance = Alfresco::SitesApi.new
 
 person_id = "person_id_example" # String | The identifier of a person.
 
@@ -408,7 +408,7 @@ site_id = "site_id_example" # String | The identifier of a site.
 begin
   #Delete a site membership
   api_instance.delete_site_membership_for_person(person_idsite_id, )
-rescue SwaggerClient::ApiError => e
+rescue Alfresco::ApiError => e
   puts "Exception when calling SitesApi->delete_site_membership_for_person: #{e}"
 end
 ```
@@ -445,15 +445,15 @@ Deletes the site membership request to site **siteId** for person **personId**. 
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'alfresco_ruby'
 # setup authorization
-SwaggerClient.configure do |config|
+Alfresco.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::SitesApi.new
+api_instance = Alfresco::SitesApi.new
 
 person_id = "person_id_example" # String | The identifier of a person.
 
@@ -463,7 +463,7 @@ site_id = "site_id_example" # String | The identifier of a site.
 begin
   #Delete a site membership request
   api_instance.delete_site_membership_request_for_person(person_idsite_id, )
-rescue SwaggerClient::ApiError => e
+rescue Alfresco::ApiError => e
   puts "Exception when calling SitesApi->delete_site_membership_request_for_person: #{e}"
 end
 ```
@@ -500,15 +500,15 @@ Gets information for site **siteId**.  You can use the **relations** parameter t
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'alfresco_ruby'
 # setup authorization
-SwaggerClient.configure do |config|
+Alfresco.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::SitesApi.new
+api_instance = Alfresco::SitesApi.new
 
 site_id = "site_id_example" # String | The identifier of a site.
 
@@ -521,7 +521,7 @@ begin
   #Get a site
   result = api_instance.get_site(site_id, , opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue Alfresco::ApiError => e
   puts "Exception when calling SitesApi->get_site: #{e}"
 end
 ```
@@ -559,15 +559,15 @@ Gets information on the container **containerId** in site **siteId**.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'alfresco_ruby'
 # setup authorization
-SwaggerClient.configure do |config|
+Alfresco.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::SitesApi.new
+api_instance = Alfresco::SitesApi.new
 
 site_id = "site_id_example" # String | The identifier of a site.
 
@@ -581,7 +581,7 @@ begin
   #Get a site container
   result = api_instance.get_site_container(site_id, container_id, opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue Alfresco::ApiError => e
   puts "Exception when calling SitesApi->get_site_container: #{e}"
 end
 ```
@@ -619,15 +619,15 @@ Gets site membership information for person **personId** on site **siteId**.  Yo
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'alfresco_ruby'
 # setup authorization
-SwaggerClient.configure do |config|
+Alfresco.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::SitesApi.new
+api_instance = Alfresco::SitesApi.new
 
 site_id = "site_id_example" # String | The identifier of a site.
 
@@ -641,7 +641,7 @@ begin
   #Get a site membership
   result = api_instance.get_site_membership(site_id, person_id, opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue Alfresco::ApiError => e
   puts "Exception when calling SitesApi->get_site_membership: #{e}"
 end
 ```
@@ -679,15 +679,15 @@ Gets site membership information for person **personId** on site **siteId**.  Yo
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'alfresco_ruby'
 # setup authorization
-SwaggerClient.configure do |config|
+Alfresco.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::SitesApi.new
+api_instance = Alfresco::SitesApi.new
 
 person_id = "person_id_example" # String | The identifier of a person.
 
@@ -698,7 +698,7 @@ begin
   #Get a site membership
   result = api_instance.get_site_membership_for_person(person_idsite_id, )
   p result
-rescue SwaggerClient::ApiError => e
+rescue Alfresco::ApiError => e
   puts "Exception when calling SitesApi->get_site_membership_for_person: #{e}"
 end
 ```
@@ -735,15 +735,15 @@ Gets the site membership request for site **siteId** for person **personId**, if
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'alfresco_ruby'
 # setup authorization
-SwaggerClient.configure do |config|
+Alfresco.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::SitesApi.new
+api_instance = Alfresco::SitesApi.new
 
 person_id = "person_id_example" # String | The identifier of a person.
 
@@ -757,7 +757,7 @@ begin
   #Get a site membership request
   result = api_instance.get_site_membership_request_for_person(person_idsite_id, , opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue Alfresco::ApiError => e
   puts "Exception when calling SitesApi->get_site_membership_request_for_person: #{e}"
 end
 ```
@@ -795,15 +795,15 @@ Get the list of site membership requests the user can action.  You can use the *
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'alfresco_ruby'
 # setup authorization
-SwaggerClient.configure do |config|
+Alfresco.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::SitesApi.new
+api_instance = Alfresco::SitesApi.new
 
 opts = { 
   skip_count: 0, # Integer | The number of entities that exist in the collection before those included in this list.  If not supplied then the default value is 0. 
@@ -816,7 +816,7 @@ begin
   #Get site membership requests
   result = api_instance.get_site_membership_requests(opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue Alfresco::ApiError => e
   puts "Exception when calling SitesApi->get_site_membership_requests: #{e}"
 end
 ```
@@ -855,15 +855,15 @@ Gets a list of containers for the site **siteId**.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'alfresco_ruby'
 # setup authorization
-SwaggerClient.configure do |config|
+Alfresco.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::SitesApi.new
+api_instance = Alfresco::SitesApi.new
 
 site_id = "site_id_example" # String | The identifier of a site.
 
@@ -877,7 +877,7 @@ begin
   #List site containers
   result = api_instance.list_site_containers(site_id, , opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue Alfresco::ApiError => e
   puts "Exception when calling SitesApi->list_site_containers: #{e}"
 end
 ```
@@ -916,15 +916,15 @@ Gets a list of the current site membership requests for person **personId**.  Yo
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'alfresco_ruby'
 # setup authorization
-SwaggerClient.configure do |config|
+Alfresco.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::SitesApi.new
+api_instance = Alfresco::SitesApi.new
 
 person_id = "person_id_example" # String | The identifier of a person.
 
@@ -938,7 +938,7 @@ begin
   #List site membership requests
   result = api_instance.list_site_membership_requests_for_person(person_id, opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue Alfresco::ApiError => e
   puts "Exception when calling SitesApi->list_site_membership_requests_for_person: #{e}"
 end
 ```
@@ -977,15 +977,15 @@ Gets a list of site memberships for site **siteId**.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'alfresco_ruby'
 # setup authorization
-SwaggerClient.configure do |config|
+Alfresco.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::SitesApi.new
+api_instance = Alfresco::SitesApi.new
 
 site_id = "site_id_example" # String | The identifier of a site.
 
@@ -999,7 +999,7 @@ begin
   #List site memberships
   result = api_instance.list_site_memberships(site_id, , opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue Alfresco::ApiError => e
   puts "Exception when calling SitesApi->list_site_memberships: #{e}"
 end
 ```
@@ -1038,15 +1038,15 @@ Gets a list of site membership information for person **personId**.  You can use
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'alfresco_ruby'
 # setup authorization
-SwaggerClient.configure do |config|
+Alfresco.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::SitesApi.new
+api_instance = Alfresco::SitesApi.new
 
 person_id = "person_id_example" # String | The identifier of a person.
 
@@ -1063,7 +1063,7 @@ begin
   #List site memberships
   result = api_instance.list_site_memberships_for_person(person_id, opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue Alfresco::ApiError => e
   puts "Exception when calling SitesApi->list_site_memberships_for_person: #{e}"
 end
 ```
@@ -1105,15 +1105,15 @@ Gets a list of sites in this repository.  You can use the **where** parameter to
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'alfresco_ruby'
 # setup authorization
-SwaggerClient.configure do |config|
+Alfresco.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::SitesApi.new
+api_instance = Alfresco::SitesApi.new
 
 opts = { 
   skip_count: 0, # Integer | The number of entities that exist in the collection before those included in this list.  If not supplied then the default value is 0. 
@@ -1128,7 +1128,7 @@ begin
   #List sites
   result = api_instance.list_sites(opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue Alfresco::ApiError => e
   puts "Exception when calling SitesApi->list_sites: #{e}"
 end
 ```
@@ -1169,28 +1169,28 @@ Reject a site membership request.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'alfresco_ruby'
 # setup authorization
-SwaggerClient.configure do |config|
+Alfresco.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::SitesApi.new
+api_instance = Alfresco::SitesApi.new
 
 site_id = "site_id_example" # String | The identifier of a site.
 
 invitee_id = "invitee_id_example" # String | The invitee user name.
 
 opts = { 
-  site_membership_rejection_body: SwaggerClient::SiteMembershipRejectionBody.new # SiteMembershipRejectionBody | Rejecting a request to join, optionally, allows the inclusion of comment. 
+  site_membership_rejection_body: Alfresco::SiteMembershipRejectionBody.new # SiteMembershipRejectionBody | Rejecting a request to join, optionally, allows the inclusion of comment. 
 }
 
 begin
   #Reject a site membership request
   api_instance.reject_site_membership_request(site_id, invitee_id, opts)
-rescue SwaggerClient::ApiError => e
+rescue Alfresco::ApiError => e
   puts "Exception when calling SitesApi->reject_site_membership_request: #{e}"
 end
 ```
@@ -1228,19 +1228,19 @@ Update a site
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'alfresco_ruby'
 # setup authorization
-SwaggerClient.configure do |config|
+Alfresco.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::SitesApi.new
+api_instance = Alfresco::SitesApi.new
 
 site_id = "site_id_example" # String | The identifier of a site.
 
-site_body_update = SwaggerClient::SiteBodyUpdate.new # SiteBodyUpdate | The site information to update.
+site_body_update = Alfresco::SiteBodyUpdate.new # SiteBodyUpdate | The site information to update.
 
 opts = { 
   fields: ["fields_example"] # Array<String> | A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. 
@@ -1250,7 +1250,7 @@ begin
   #Update a site
   result = api_instance.update_site(site_id, site_body_update, opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue Alfresco::ApiError => e
   puts "Exception when calling SitesApi->update_site: #{e}"
 end
 ```
@@ -1288,21 +1288,21 @@ Update the membership of person **personId** in site **siteId**.  You can use th
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'alfresco_ruby'
 # setup authorization
-SwaggerClient.configure do |config|
+Alfresco.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::SitesApi.new
+api_instance = Alfresco::SitesApi.new
 
 site_id = "site_id_example" # String | The identifier of a site.
 
 person_id = "person_id_example" # String | The identifier of a person.
 
-site_membership_body_update = SwaggerClient::SiteMembershipBodyUpdate.new # SiteMembershipBodyUpdate | The persons new role
+site_membership_body_update = Alfresco::SiteMembershipBodyUpdate.new # SiteMembershipBodyUpdate | The persons new role
 
 opts = { 
   fields: ["fields_example"] # Array<String> | A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. 
@@ -1312,7 +1312,7 @@ begin
   #Update a site membership
   result = api_instance.update_site_membership(site_id, person_idsite_membership_body_update, opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue Alfresco::ApiError => e
   puts "Exception when calling SitesApi->update_site_membership: #{e}"
 end
 ```
@@ -1351,21 +1351,21 @@ Updates the message for the site membership request to site **siteId** for perso
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'alfresco_ruby'
 # setup authorization
-SwaggerClient.configure do |config|
+Alfresco.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::SitesApi.new
+api_instance = Alfresco::SitesApi.new
 
 person_id = "person_id_example" # String | The identifier of a person.
 
 site_id = "site_id_example" # String | The identifier of a site.
 
-site_membership_request_body_update = SwaggerClient::SiteMembershipRequestBodyUpdate.new # SiteMembershipRequestBodyUpdate | The new message to display
+site_membership_request_body_update = Alfresco::SiteMembershipRequestBodyUpdate.new # SiteMembershipRequestBodyUpdate | The new message to display
 
 opts = { 
   fields: ["fields_example"] # Array<String> | A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. 
@@ -1375,7 +1375,7 @@ begin
   #Update a site membership request
   result = api_instance.update_site_membership_request_for_person(person_idsite_id, site_membership_request_body_update, opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue Alfresco::ApiError => e
   puts "Exception when calling SitesApi->update_site_membership_request_for_person: #{e}"
 end
 ```

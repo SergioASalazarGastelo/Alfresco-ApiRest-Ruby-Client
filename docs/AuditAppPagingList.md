@@ -1,4 +1,4 @@
-# SwaggerClient::AuditAppPagingList
+# Alfresco::AuditAppPagingList
 
 ## Properties
 Name | Type | Description | Notes

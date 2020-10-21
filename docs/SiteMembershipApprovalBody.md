@@ -1,4 +1,4 @@
-# SwaggerClient::SiteMembershipApprovalBody
+# Alfresco::SiteMembershipApprovalBody
 
 ## Properties
 Name | Type | Description | Notes

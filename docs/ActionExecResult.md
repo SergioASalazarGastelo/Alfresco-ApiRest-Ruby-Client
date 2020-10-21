@@ -1,4 +1,4 @@
-# SwaggerClient::ActionExecResult
+# Alfresco::ActionExecResult
 
 ## Properties
 Name | Type | Description | Notes

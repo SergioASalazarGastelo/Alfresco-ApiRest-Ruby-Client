@@ -1,4 +1,4 @@
-# SwaggerClient::SharedLinkBodyEmail
+# Alfresco::SharedLinkBodyEmail
 
 ## Properties
 Name | Type | Description | Notes

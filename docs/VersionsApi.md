@@ -1,4 +1,4 @@
-# SwaggerClient::VersionsApi
+# Alfresco::VersionsApi
 
 All URIs are relative to *https://localhost/alfresco/api/-default-/public/alfresco/versions/1*
 
@@ -21,15 +21,15 @@ Delete a version
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'alfresco_ruby'
 # setup authorization
-SwaggerClient.configure do |config|
+Alfresco.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::VersionsApi.new
+api_instance = Alfresco::VersionsApi.new
 
 node_id = "node_id_example" # String | The identifier of a node.
 
@@ -39,7 +39,7 @@ version_id = "version_id_example" # String | The identifier of a version, ie. ve
 begin
   #Delete a version
   api_instance.delete_version(node_id, version_id, )
-rescue SwaggerClient::ApiError => e
+rescue Alfresco::ApiError => e
   puts "Exception when calling VersionsApi->delete_version: #{e}"
 end
 ```
@@ -76,15 +76,15 @@ Get version information
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'alfresco_ruby'
 # setup authorization
-SwaggerClient.configure do |config|
+Alfresco.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::VersionsApi.new
+api_instance = Alfresco::VersionsApi.new
 
 node_id = "node_id_example" # String | The identifier of a node.
 
@@ -95,7 +95,7 @@ begin
   #Get version information
   result = api_instance.get_version(node_id, version_id, )
   p result
-rescue SwaggerClient::ApiError => e
+rescue Alfresco::ApiError => e
   puts "Exception when calling VersionsApi->get_version: #{e}"
 end
 ```
@@ -132,15 +132,15 @@ Get version content
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'alfresco_ruby'
 # setup authorization
-SwaggerClient.configure do |config|
+Alfresco.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::VersionsApi.new
+api_instance = Alfresco::VersionsApi.new
 
 node_id = "node_id_example" # String | The identifier of a node.
 
@@ -156,7 +156,7 @@ begin
   #Get version content
   result = api_instance.get_version_content(node_id, version_id, , opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue Alfresco::ApiError => e
   puts "Exception when calling VersionsApi->get_version_content: #{e}"
 end
 ```
@@ -196,15 +196,15 @@ List version history
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'alfresco_ruby'
 # setup authorization
-SwaggerClient.configure do |config|
+Alfresco.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::VersionsApi.new
+api_instance = Alfresco::VersionsApi.new
 
 node_id = "node_id_example" # String | The identifier of a node.
 
@@ -219,7 +219,7 @@ begin
   #List version history
   result = api_instance.list_version_history(node_id, , opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue Alfresco::ApiError => e
   puts "Exception when calling VersionsApi->list_version_history: #{e}"
 end
 ```
@@ -259,21 +259,21 @@ Revert a version
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'alfresco_ruby'
 # setup authorization
-SwaggerClient.configure do |config|
+Alfresco.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::VersionsApi.new
+api_instance = Alfresco::VersionsApi.new
 
 node_id = "node_id_example" # String | The identifier of a node.
 
 version_id = "version_id_example" # String | The identifier of a version, ie. version label, within the version history of a node.
 
-revert_body = SwaggerClient::RevertBody.new # RevertBody | Optionally, specify a version comment and whether this should be a major version, or not.
+revert_body = Alfresco::RevertBody.new # RevertBody | Optionally, specify a version comment and whether this should be a major version, or not.
 
 opts = { 
   fields: ["fields_example"] # Array<String> | A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. 
@@ -283,7 +283,7 @@ begin
   #Revert a version
   result = api_instance.revert_version(node_id, version_id, revert_body, opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue Alfresco::ApiError => e
   puts "Exception when calling VersionsApi->revert_version: #{e}"
 end
 ```

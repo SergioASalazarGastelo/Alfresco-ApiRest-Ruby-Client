@@ -1,4 +1,4 @@
-# SwaggerClient::TagBody
+# Alfresco::TagBody
 
 ## Properties
 Name | Type | Description | Notes

@@ -1,4 +1,4 @@
-# SwaggerClient::DownloadsApi
+# Alfresco::DownloadsApi
 
 All URIs are relative to *https://localhost/alfresco/api/-default-/public/alfresco/versions/1*
 
@@ -19,15 +19,15 @@ Cancel a download
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'alfresco_ruby'
 # setup authorization
-SwaggerClient.configure do |config|
+Alfresco.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::DownloadsApi.new
+api_instance = Alfresco::DownloadsApi.new
 
 download_id = "download_id_example" # String | The identifier of a download node.
 
@@ -35,7 +35,7 @@ download_id = "download_id_example" # String | The identifier of a download node
 begin
   #Cancel a download
   api_instance.cancel_download(download_id)
-rescue SwaggerClient::ApiError => e
+rescue Alfresco::ApiError => e
   puts "Exception when calling DownloadsApi->cancel_download: #{e}"
 end
 ```
@@ -71,17 +71,17 @@ Create a new download
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'alfresco_ruby'
 # setup authorization
-SwaggerClient.configure do |config|
+Alfresco.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::DownloadsApi.new
+api_instance = Alfresco::DownloadsApi.new
 
-download_body_create = SwaggerClient::DownloadBodyCreate.new # DownloadBodyCreate | The nodeIds the content of which will be zipped, which zip will be set as the content of our download node.
+download_body_create = Alfresco::DownloadBodyCreate.new # DownloadBodyCreate | The nodeIds the content of which will be zipped, which zip will be set as the content of our download node.
 
 opts = { 
   fields: ["fields_example"] # Array<String> | A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. 
@@ -91,7 +91,7 @@ begin
   #Create a new download
   result = api_instance.create_download(download_body_create, opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue Alfresco::ApiError => e
   puts "Exception when calling DownloadsApi->create_download: #{e}"
 end
 ```
@@ -128,15 +128,15 @@ Get a download
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'alfresco_ruby'
 # setup authorization
-SwaggerClient.configure do |config|
+Alfresco.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::DownloadsApi.new
+api_instance = Alfresco::DownloadsApi.new
 
 download_id = "download_id_example" # String | The identifier of a download node.
 
@@ -148,7 +148,7 @@ begin
   #Get a download
   result = api_instance.get_download(download_id, opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue Alfresco::ApiError => e
   puts "Exception when calling DownloadsApi->get_download: #{e}"
 end
 ```

@@ -1,4 +1,4 @@
-# SwaggerClient::ChildAssociationEntry
+# Alfresco::ChildAssociationEntry
 
 ## Properties
 Name | Type | Description | Notes

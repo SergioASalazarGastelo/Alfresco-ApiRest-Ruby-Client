@@ -1,4 +1,4 @@
-# SwaggerClient::NodeBodyMove
+# Alfresco::NodeBodyMove
 
 ## Properties
 Name | Type | Description | Notes

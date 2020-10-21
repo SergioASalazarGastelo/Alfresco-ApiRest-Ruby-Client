@@ -1,4 +1,4 @@
-# SwaggerClient::ActivitiesApi
+# Alfresco::ActivitiesApi
 
 All URIs are relative to *https://localhost/alfresco/api/-default-/public/alfresco/versions/1*
 
@@ -17,15 +17,15 @@ Gets a list of activities for person **personId**.  You can use the `-me-` strin
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'alfresco_ruby'
 # setup authorization
-SwaggerClient.configure do |config|
+Alfresco.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::ActivitiesApi.new
+api_instance = Alfresco::ActivitiesApi.new
 
 person_id = "person_id_example" # String | The identifier of a person.
 
@@ -41,7 +41,7 @@ begin
   #List activities
   result = api_instance.list_activities_for_person(person_id, opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue Alfresco::ApiError => e
   puts "Exception when calling ActivitiesApi->list_activities_for_person: #{e}"
 end
 ```

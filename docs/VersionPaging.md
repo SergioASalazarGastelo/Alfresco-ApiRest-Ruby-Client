@@ -1,4 +1,4 @@
-# SwaggerClient::VersionPaging
+# Alfresco::VersionPaging
 
 ## Properties
 Name | Type | Description | Notes

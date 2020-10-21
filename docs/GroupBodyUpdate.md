@@ -1,4 +1,4 @@
-# SwaggerClient::GroupBodyUpdate
+# Alfresco::GroupBodyUpdate
 
 ## Properties
 Name | Type | Description | Notes

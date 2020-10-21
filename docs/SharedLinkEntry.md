@@ -1,4 +1,4 @@
-# SwaggerClient::SharedLinkEntry
+# Alfresco::SharedLinkEntry
 
 ## Properties
 Name | Type | Description | Notes

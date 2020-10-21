@@ -1,4 +1,4 @@
-# SwaggerClient::NetworkQuota
+# Alfresco::NetworkQuota
 
 ## Properties
 Name | Type | Description | Notes

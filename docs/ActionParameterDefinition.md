@@ -1,4 +1,4 @@
-# SwaggerClient::ActionParameterDefinition
+# Alfresco::ActionParameterDefinition
 
 ## Properties
 Name | Type | Description | Notes

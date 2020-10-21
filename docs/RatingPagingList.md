@@ -1,4 +1,4 @@
-# SwaggerClient::RatingPagingList
+# Alfresco::RatingPagingList
 
 ## Properties
 Name | Type | Description | Notes

@@ -1,4 +1,4 @@
-# SwaggerClient::PreferencePaging
+# Alfresco::PreferencePaging
 
 ## Properties
 Name | Type | Description | Notes

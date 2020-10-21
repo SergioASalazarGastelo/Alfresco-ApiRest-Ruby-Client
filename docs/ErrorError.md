@@ -1,4 +1,4 @@
-# SwaggerClient::ErrorError
+# Alfresco::ErrorError
 
 ## Properties
 Name | Type | Description | Notes

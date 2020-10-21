@@ -1,4 +1,4 @@
-# SwaggerClient::PreferencesApi
+# Alfresco::PreferencesApi
 
 All URIs are relative to *https://localhost/alfresco/api/-default-/public/alfresco/versions/1*
 
@@ -18,15 +18,15 @@ Gets a specific preference for person **personId**.  You can use the `-me-` stri
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'alfresco_ruby'
 # setup authorization
-SwaggerClient.configure do |config|
+Alfresco.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::PreferencesApi.new
+api_instance = Alfresco::PreferencesApi.new
 
 person_id = "person_id_example" # String | The identifier of a person.
 
@@ -40,7 +40,7 @@ begin
   #Get a preference
   result = api_instance.get_preference(person_idpreference_name, opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue Alfresco::ApiError => e
   puts "Exception when calling PreferencesApi->get_preference: #{e}"
 end
 ```
@@ -78,15 +78,15 @@ Gets a list of preferences for person **personId**.  You can use the `-me-` stri
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'alfresco_ruby'
 # setup authorization
-SwaggerClient.configure do |config|
+Alfresco.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::PreferencesApi.new
+api_instance = Alfresco::PreferencesApi.new
 
 person_id = "person_id_example" # String | The identifier of a person.
 
@@ -100,7 +100,7 @@ begin
   #List preferences
   result = api_instance.list_preferences(person_id, opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue Alfresco::ApiError => e
   puts "Exception when calling PreferencesApi->list_preferences: #{e}"
 end
 ```

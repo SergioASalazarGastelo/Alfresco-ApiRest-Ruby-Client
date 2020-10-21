@@ -1,4 +1,4 @@
-# SwaggerClient::Company
+# Alfresco::Company
 
 ## Properties
 Name | Type | Description | Notes

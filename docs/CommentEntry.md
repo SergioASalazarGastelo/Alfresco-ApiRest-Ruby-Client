@@ -1,4 +1,4 @@
-# SwaggerClient::CommentEntry
+# Alfresco::CommentEntry
 
 ## Properties
 Name | Type | Description | Notes

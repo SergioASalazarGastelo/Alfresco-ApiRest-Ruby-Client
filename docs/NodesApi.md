@@ -1,4 +1,4 @@
-# SwaggerClient::NodesApi
+# Alfresco::NodesApi
 
 All URIs are relative to *https://localhost/alfresco/api/-default-/public/alfresco/versions/1*
 
@@ -35,19 +35,19 @@ Copy a node
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'alfresco_ruby'
 # setup authorization
-SwaggerClient.configure do |config|
+Alfresco.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::NodesApi.new
+api_instance = Alfresco::NodesApi.new
 
 node_id = "node_id_example" # String | The identifier of a node.
 
-node_body_copy = SwaggerClient::NodeBodyCopy.new # NodeBodyCopy | The targetParentId and, optionally, a new name which should include the file extension.
+node_body_copy = Alfresco::NodeBodyCopy.new # NodeBodyCopy | The targetParentId and, optionally, a new name which should include the file extension.
 
 opts = { 
   include: ["include_example"], # Array<String> | Returns additional information about the node. The following optional fields can be requested: * allowableOperations * association * isLink * isFavorite * isLocked * path * permissions 
@@ -58,7 +58,7 @@ begin
   #Copy a node
   result = api_instance.copy_node(node_id, node_body_copy, opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue Alfresco::ApiError => e
   puts "Exception when calling NodesApi->copy_node: #{e}"
 end
 ```
@@ -97,19 +97,19 @@ Create node association
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'alfresco_ruby'
 # setup authorization
-SwaggerClient.configure do |config|
+Alfresco.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::NodesApi.new
+api_instance = Alfresco::NodesApi.new
 
 node_id = "node_id_example" # String | The identifier of a source node.
 
-association_body_create = SwaggerClient::AssociationBody.new # AssociationBody | The target node id and assoc type.
+association_body_create = Alfresco::AssociationBody.new # AssociationBody | The target node id and assoc type.
 
 opts = { 
   fields: ["fields_example"] # Array<String> | A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. 
@@ -119,7 +119,7 @@ begin
   #Create node association
   result = api_instance.create_association(node_id, association_body_create, opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue Alfresco::ApiError => e
   puts "Exception when calling NodesApi->create_association: #{e}"
 end
 ```
@@ -157,19 +157,19 @@ Create a node
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'alfresco_ruby'
 # setup authorization
-SwaggerClient.configure do |config|
+Alfresco.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::NodesApi.new
+api_instance = Alfresco::NodesApi.new
 
 node_id = "node_id_example" # String | The identifier of a node. You can also use one of these well-known aliases: * -my- * -shared- * -root- 
 
-node_body_create = SwaggerClient::NodeBodyCreate.new # NodeBodyCreate | The node information to create.
+node_body_create = Alfresco::NodeBodyCreate.new # NodeBodyCreate | The node information to create.
 
 opts = { 
   auto_rename: true, # BOOLEAN | If true, then  a name clash will cause an attempt to auto rename by finding a unique name using an integer suffix.
@@ -181,7 +181,7 @@ begin
   #Create a node
   result = api_instance.create_node(node_id, node_body_create, opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue Alfresco::ApiError => e
   puts "Exception when calling NodesApi->create_node: #{e}"
 end
 ```
@@ -221,19 +221,19 @@ Create secondary child
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'alfresco_ruby'
 # setup authorization
-SwaggerClient.configure do |config|
+Alfresco.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::NodesApi.new
+api_instance = Alfresco::NodesApi.new
 
 node_id = "node_id_example" # String | The identifier of a parent node.
 
-secondary_child_association_body_create = SwaggerClient::ChildAssociationBody.new # ChildAssociationBody | The child node id and assoc type.
+secondary_child_association_body_create = Alfresco::ChildAssociationBody.new # ChildAssociationBody | The child node id and assoc type.
 
 opts = { 
   fields: ["fields_example"] # Array<String> | A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. 
@@ -243,7 +243,7 @@ begin
   #Create secondary child
   result = api_instance.create_secondary_child_association(node_id, secondary_child_association_body_create, opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue Alfresco::ApiError => e
   puts "Exception when calling NodesApi->create_secondary_child_association: #{e}"
 end
 ```
@@ -281,15 +281,15 @@ Delete node association(s)
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'alfresco_ruby'
 # setup authorization
-SwaggerClient.configure do |config|
+Alfresco.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::NodesApi.new
+api_instance = Alfresco::NodesApi.new
 
 node_id = "node_id_example" # String | The identifier of a source node.
 
@@ -302,7 +302,7 @@ opts = {
 begin
   #Delete node association(s)
   api_instance.delete_association(node_id, target_id, opts)
-rescue SwaggerClient::ApiError => e
+rescue Alfresco::ApiError => e
   puts "Exception when calling NodesApi->delete_association: #{e}"
 end
 ```
@@ -340,15 +340,15 @@ Delete a node
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'alfresco_ruby'
 # setup authorization
-SwaggerClient.configure do |config|
+Alfresco.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::NodesApi.new
+api_instance = Alfresco::NodesApi.new
 
 node_id = "node_id_example" # String | The identifier of a node.
 
@@ -359,7 +359,7 @@ opts = {
 begin
   #Delete a node
   api_instance.delete_node(node_id, , opts)
-rescue SwaggerClient::ApiError => e
+rescue Alfresco::ApiError => e
   puts "Exception when calling NodesApi->delete_node: #{e}"
 end
 ```
@@ -396,15 +396,15 @@ Delete secondary child or children
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'alfresco_ruby'
 # setup authorization
-SwaggerClient.configure do |config|
+Alfresco.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::NodesApi.new
+api_instance = Alfresco::NodesApi.new
 
 node_id = "node_id_example" # String | The identifier of a parent node.
 
@@ -417,7 +417,7 @@ opts = {
 begin
   #Delete secondary child or children
   api_instance.delete_secondary_child_association(node_id, child_id, opts)
-rescue SwaggerClient::ApiError => e
+rescue Alfresco::ApiError => e
   puts "Exception when calling NodesApi->delete_secondary_child_association: #{e}"
 end
 ```
@@ -455,15 +455,15 @@ Get a node
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'alfresco_ruby'
 # setup authorization
-SwaggerClient.configure do |config|
+Alfresco.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::NodesApi.new
+api_instance = Alfresco::NodesApi.new
 
 node_id = "node_id_example" # String | The identifier of a node. You can also use one of these well-known aliases: * -my- * -shared- * -root- 
 
@@ -477,7 +477,7 @@ begin
   #Get a node
   result = api_instance.get_node(node_id, , opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue Alfresco::ApiError => e
   puts "Exception when calling NodesApi->get_node: #{e}"
 end
 ```
@@ -516,15 +516,15 @@ Get node content
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'alfresco_ruby'
 # setup authorization
-SwaggerClient.configure do |config|
+Alfresco.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::NodesApi.new
+api_instance = Alfresco::NodesApi.new
 
 node_id = "node_id_example" # String | The identifier of a node.
 
@@ -538,7 +538,7 @@ begin
   #Get node content
   result = api_instance.get_node_content(node_id, , opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue Alfresco::ApiError => e
   puts "Exception when calling NodesApi->get_node_content: #{e}"
 end
 ```
@@ -577,15 +577,15 @@ List node children
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'alfresco_ruby'
 # setup authorization
-SwaggerClient.configure do |config|
+Alfresco.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::NodesApi.new
+api_instance = Alfresco::NodesApi.new
 
 node_id = "node_id_example" # String | The identifier of a node. You can also use one of these well-known aliases: * -my- * -shared- * -root- 
 
@@ -604,7 +604,7 @@ begin
   #List node children
   result = api_instance.list_node_children(node_id, , opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue Alfresco::ApiError => e
   puts "Exception when calling NodesApi->list_node_children: #{e}"
 end
 ```
@@ -648,15 +648,15 @@ List parents
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'alfresco_ruby'
 # setup authorization
-SwaggerClient.configure do |config|
+Alfresco.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::NodesApi.new
+api_instance = Alfresco::NodesApi.new
 
 node_id = "node_id_example" # String | The identifier of a child node. You can also use one of these well-known aliases: * -my- * -shared- * -root- 
 
@@ -673,7 +673,7 @@ begin
   #List parents
   result = api_instance.list_parents(node_id, opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue Alfresco::ApiError => e
   puts "Exception when calling NodesApi->list_parents: #{e}"
 end
 ```
@@ -715,15 +715,15 @@ List secondary children
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'alfresco_ruby'
 # setup authorization
-SwaggerClient.configure do |config|
+Alfresco.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::NodesApi.new
+api_instance = Alfresco::NodesApi.new
 
 node_id = "node_id_example" # String | The identifier of a parent node. You can also use one of these well-known aliases: * -my- * -shared- * -root- 
 
@@ -740,7 +740,7 @@ begin
   #List secondary children
   result = api_instance.list_secondary_children(node_id, opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue Alfresco::ApiError => e
   puts "Exception when calling NodesApi->list_secondary_children: #{e}"
 end
 ```
@@ -782,15 +782,15 @@ List source associations
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'alfresco_ruby'
 # setup authorization
-SwaggerClient.configure do |config|
+Alfresco.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::NodesApi.new
+api_instance = Alfresco::NodesApi.new
 
 node_id = "node_id_example" # String | The identifier of a target node.
 
@@ -804,7 +804,7 @@ begin
   #List source associations
   result = api_instance.list_source_associations(node_id, opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue Alfresco::ApiError => e
   puts "Exception when calling NodesApi->list_source_associations: #{e}"
 end
 ```
@@ -843,15 +843,15 @@ List target associations
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'alfresco_ruby'
 # setup authorization
-SwaggerClient.configure do |config|
+Alfresco.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::NodesApi.new
+api_instance = Alfresco::NodesApi.new
 
 node_id = "node_id_example" # String | The identifier of a source node.
 
@@ -865,7 +865,7 @@ begin
   #List target associations
   result = api_instance.list_target_associations(node_id, , opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue Alfresco::ApiError => e
   puts "Exception when calling NodesApi->list_target_associations: #{e}"
 end
 ```
@@ -904,19 +904,19 @@ Lock a node
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'alfresco_ruby'
 # setup authorization
-SwaggerClient.configure do |config|
+Alfresco.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::NodesApi.new
+api_instance = Alfresco::NodesApi.new
 
 node_id = "node_id_example" # String | The identifier of a node.
 
-node_body_lock = SwaggerClient::NodeBodyLock.new # NodeBodyLock | Lock details.
+node_body_lock = Alfresco::NodeBodyLock.new # NodeBodyLock | Lock details.
 
 opts = { 
   include: ["include_example"], # Array<String> | Returns additional information about the node. The following optional fields can be requested: * allowableOperations * association * isLink * isFavorite * isLocked * path * permissions 
@@ -927,7 +927,7 @@ begin
   #Lock a node
   result = api_instance.lock_node(node_id, node_body_lock, opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue Alfresco::ApiError => e
   puts "Exception when calling NodesApi->lock_node: #{e}"
 end
 ```
@@ -966,19 +966,19 @@ Move a node
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'alfresco_ruby'
 # setup authorization
-SwaggerClient.configure do |config|
+Alfresco.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::NodesApi.new
+api_instance = Alfresco::NodesApi.new
 
 node_id = "node_id_example" # String | The identifier of a node.
 
-node_body_move = SwaggerClient::NodeBodyMove.new # NodeBodyMove | The targetParentId and, optionally, a new name which should include the file extension.
+node_body_move = Alfresco::NodeBodyMove.new # NodeBodyMove | The targetParentId and, optionally, a new name which should include the file extension.
 
 opts = { 
   include: ["include_example"], # Array<String> | Returns additional information about the node. The following optional fields can be requested: * allowableOperations * association * isLink * isFavorite * isLocked * path * permissions 
@@ -989,7 +989,7 @@ begin
   #Move a node
   result = api_instance.move_node(node_id, node_body_move, opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue Alfresco::ApiError => e
   puts "Exception when calling NodesApi->move_node: #{e}"
 end
 ```
@@ -1028,15 +1028,15 @@ Unlock a node
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'alfresco_ruby'
 # setup authorization
-SwaggerClient.configure do |config|
+Alfresco.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::NodesApi.new
+api_instance = Alfresco::NodesApi.new
 
 node_id = "node_id_example" # String | The identifier of a node.
 
@@ -1049,7 +1049,7 @@ begin
   #Unlock a node
   result = api_instance.unlock_node(node_id, , opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue Alfresco::ApiError => e
   puts "Exception when calling NodesApi->unlock_node: #{e}"
 end
 ```
@@ -1087,19 +1087,19 @@ Update a node
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'alfresco_ruby'
 # setup authorization
-SwaggerClient.configure do |config|
+Alfresco.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::NodesApi.new
+api_instance = Alfresco::NodesApi.new
 
 node_id = "node_id_example" # String | The identifier of a node.
 
-node_body_update = SwaggerClient::NodeBodyUpdate.new # NodeBodyUpdate | The node information to update.
+node_body_update = Alfresco::NodeBodyUpdate.new # NodeBodyUpdate | The node information to update.
 
 opts = { 
   include: ["include_example"], # Array<String> | Returns additional information about the node. The following optional fields can be requested: * allowableOperations * association * isLink * isFavorite * isLocked * path * permissions 
@@ -1110,7 +1110,7 @@ begin
   #Update a node
   result = api_instance.update_node(node_id, node_body_update, opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue Alfresco::ApiError => e
   puts "Exception when calling NodesApi->update_node: #{e}"
 end
 ```
@@ -1149,15 +1149,15 @@ Update node content
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'alfresco_ruby'
 # setup authorization
-SwaggerClient.configure do |config|
+Alfresco.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::NodesApi.new
+api_instance = Alfresco::NodesApi.new
 
 node_id = "node_id_example" # String | The identifier of a node.
 
@@ -1175,7 +1175,7 @@ begin
   #Update node content
   result = api_instance.update_node_content(node_id, content_body_update, opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue Alfresco::ApiError => e
   puts "Exception when calling NodesApi->update_node_content: #{e}"
 end
 ```

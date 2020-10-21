@@ -1,4 +1,4 @@
-# SwaggerClient::AuditApi
+# Alfresco::AuditApi
 
 All URIs are relative to *https://localhost/alfresco/api/-default-/public/alfresco/versions/1*
 
@@ -24,15 +24,15 @@ Permanently delete audit entries for an audit application
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'alfresco_ruby'
 # setup authorization
-SwaggerClient.configure do |config|
+Alfresco.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::AuditApi.new
+api_instance = Alfresco::AuditApi.new
 
 audit_application_id = "audit_application_id_example" # String | The identifier of an audit application.
 
@@ -42,7 +42,7 @@ where = "where_example" # String | Audit entries to permanently delete for an au
 begin
   #Permanently delete audit entries for an audit application
   api_instance.delete_audit_entries_for_audit_app(audit_application_id, where)
-rescue SwaggerClient::ApiError => e
+rescue Alfresco::ApiError => e
   puts "Exception when calling AuditApi->delete_audit_entries_for_audit_app: #{e}"
 end
 ```
@@ -79,15 +79,15 @@ Permanently delete an audit entry
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'alfresco_ruby'
 # setup authorization
-SwaggerClient.configure do |config|
+Alfresco.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::AuditApi.new
+api_instance = Alfresco::AuditApi.new
 
 audit_application_id = "audit_application_id_example" # String | The identifier of an audit application.
 
@@ -97,7 +97,7 @@ audit_entry_id = "audit_entry_id_example" # String | The identifier of an audit 
 begin
   #Permanently delete an audit entry
   api_instance.delete_audit_entry(audit_application_id, audit_entry_id)
-rescue SwaggerClient::ApiError => e
+rescue Alfresco::ApiError => e
   puts "Exception when calling AuditApi->delete_audit_entry: #{e}"
 end
 ```
@@ -134,15 +134,15 @@ Get audit application info
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'alfresco_ruby'
 # setup authorization
-SwaggerClient.configure do |config|
+Alfresco.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::AuditApi.new
+api_instance = Alfresco::AuditApi.new
 
 audit_application_id = "audit_application_id_example" # String | The identifier of an audit application.
 
@@ -154,7 +154,7 @@ begin
   #Get audit application info
   result = api_instance.get_audit_app(audit_application_id, , opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue Alfresco::ApiError => e
   puts "Exception when calling AuditApi->get_audit_app: #{e}"
 end
 ```
@@ -191,15 +191,15 @@ Get audit entry
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'alfresco_ruby'
 # setup authorization
-SwaggerClient.configure do |config|
+Alfresco.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::AuditApi.new
+api_instance = Alfresco::AuditApi.new
 
 audit_application_id = "audit_application_id_example" # String | The identifier of an audit application.
 
@@ -213,7 +213,7 @@ begin
   #Get audit entry
   result = api_instance.get_audit_entry(audit_application_id, audit_entry_id, opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue Alfresco::ApiError => e
   puts "Exception when calling AuditApi->get_audit_entry: #{e}"
 end
 ```
@@ -251,15 +251,15 @@ List audit applications
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'alfresco_ruby'
 # setup authorization
-SwaggerClient.configure do |config|
+Alfresco.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::AuditApi.new
+api_instance = Alfresco::AuditApi.new
 
 opts = { 
   skip_count: 0, # Integer | The number of entities that exist in the collection before those included in this list.  If not supplied then the default value is 0. 
@@ -271,7 +271,7 @@ begin
   #List audit applications
   result = api_instance.list_audit_apps(opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue Alfresco::ApiError => e
   puts "Exception when calling AuditApi->list_audit_apps: #{e}"
 end
 ```
@@ -309,15 +309,15 @@ List audit entries for an audit application
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'alfresco_ruby'
 # setup authorization
-SwaggerClient.configure do |config|
+Alfresco.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::AuditApi.new
+api_instance = Alfresco::AuditApi.new
 
 audit_application_id = "audit_application_id_example" # String | The identifier of an audit application.
 
@@ -334,7 +334,7 @@ begin
   #List audit entries for an audit application
   result = api_instance.list_audit_entries_for_audit_app(audit_application_id, , opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue Alfresco::ApiError => e
   puts "Exception when calling AuditApi->list_audit_entries_for_audit_app: #{e}"
 end
 ```
@@ -376,15 +376,15 @@ List audit entries for a node
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'alfresco_ruby'
 # setup authorization
-SwaggerClient.configure do |config|
+Alfresco.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::AuditApi.new
+api_instance = Alfresco::AuditApi.new
 
 node_id = "node_id_example" # String | The identifier of a node.
 
@@ -401,7 +401,7 @@ begin
   #List audit entries for a node
   result = api_instance.list_audit_entries_for_node(node_id, , opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue Alfresco::ApiError => e
   puts "Exception when calling AuditApi->list_audit_entries_for_node: #{e}"
 end
 ```
@@ -443,19 +443,19 @@ Update audit application info
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'alfresco_ruby'
 # setup authorization
-SwaggerClient.configure do |config|
+Alfresco.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::AuditApi.new
+api_instance = Alfresco::AuditApi.new
 
 audit_application_id = "audit_application_id_example" # String | The identifier of an audit application.
 
-audit_app_body_update = SwaggerClient::AuditBodyUpdate.new # AuditBodyUpdate | The audit application to update.
+audit_app_body_update = Alfresco::AuditBodyUpdate.new # AuditBodyUpdate | The audit application to update.
 
 opts = { 
   fields: ["fields_example"] # Array<String> | A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. 
@@ -465,7 +465,7 @@ begin
   #Update audit application info
   result = api_instance.update_audit_app(audit_application_id, audit_app_body_update, opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue Alfresco::ApiError => e
   puts "Exception when calling AuditApi->update_audit_app: #{e}"
 end
 ```

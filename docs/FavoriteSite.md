@@ -1,4 +1,4 @@
-# SwaggerClient::FavoriteSite
+# Alfresco::FavoriteSite
 
 ## Properties
 Name | Type | Description | Notes

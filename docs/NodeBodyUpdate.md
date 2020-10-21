@@ -1,4 +1,4 @@
-# SwaggerClient::NodeBodyUpdate
+# Alfresco::NodeBodyUpdate
 
 ## Properties
 Name | Type | Description | Notes

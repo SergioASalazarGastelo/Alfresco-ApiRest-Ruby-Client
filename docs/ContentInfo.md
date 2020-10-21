@@ -1,4 +1,4 @@
-# SwaggerClient::ContentInfo
+# Alfresco::ContentInfo
 
 ## Properties
 Name | Type | Description | Notes

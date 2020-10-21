@@ -1,4 +1,4 @@
-# SwaggerClient::CommentPagingList
+# Alfresco::CommentPagingList
 
 ## Properties
 Name | Type | Description | Notes

@@ -1,4 +1,4 @@
-# SwaggerClient::SharedlinksApi
+# Alfresco::SharedlinksApi
 
 All URIs are relative to *https://localhost/alfresco/api/-default-/public/alfresco/versions/1*
 
@@ -25,17 +25,17 @@ Create a shared link to a file
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'alfresco_ruby'
 # setup authorization
-SwaggerClient.configure do |config|
+Alfresco.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::SharedlinksApi.new
+api_instance = Alfresco::SharedlinksApi.new
 
-shared_link_body_create = SwaggerClient::SharedLinkBodyCreate.new # SharedLinkBodyCreate | The nodeId to create a shared link for.
+shared_link_body_create = Alfresco::SharedLinkBodyCreate.new # SharedLinkBodyCreate | The nodeId to create a shared link for.
 
 opts = { 
   include: ["include_example"], # Array<String> | Returns additional information about the shared link, the following optional fields can be requested: * allowableOperations * path * properties * isFavorite * aspectNames 
@@ -46,7 +46,7 @@ begin
   #Create a shared link to a file
   result = api_instance.create_shared_link(shared_link_body_create, opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue Alfresco::ApiError => e
   puts "Exception when calling SharedlinksApi->create_shared_link: #{e}"
 end
 ```
@@ -84,15 +84,15 @@ Deletes a shared link
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'alfresco_ruby'
 # setup authorization
-SwaggerClient.configure do |config|
+Alfresco.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::SharedlinksApi.new
+api_instance = Alfresco::SharedlinksApi.new
 
 shared_id = "shared_id_example" # String | The identifier of a shared link to a file.
 
@@ -100,7 +100,7 @@ shared_id = "shared_id_example" # String | The identifier of a shared link to a 
 begin
   #Deletes a shared link
   api_instance.delete_shared_link(shared_id, )
-rescue SwaggerClient::ApiError => e
+rescue Alfresco::ApiError => e
   puts "Exception when calling SharedlinksApi->delete_shared_link: #{e}"
 end
 ```
@@ -136,25 +136,25 @@ Email shared link
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'alfresco_ruby'
 # setup authorization
-SwaggerClient.configure do |config|
+Alfresco.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::SharedlinksApi.new
+api_instance = Alfresco::SharedlinksApi.new
 
 shared_id = "shared_id_example" # String | The identifier of a shared link to a file.
 
-shared_link_body_email = SwaggerClient::SharedLinkBodyEmail.new # SharedLinkBodyEmail | The shared link email to send.
+shared_link_body_email = Alfresco::SharedLinkBodyEmail.new # SharedLinkBodyEmail | The shared link email to send.
 
 
 begin
   #Email shared link
   api_instance.email_shared_link(shared_id, shared_link_body_email)
-rescue SwaggerClient::ApiError => e
+rescue Alfresco::ApiError => e
   puts "Exception when calling SharedlinksApi->email_shared_link: #{e}"
 end
 ```
@@ -191,15 +191,15 @@ Get a shared link
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'alfresco_ruby'
 # setup authorization
-SwaggerClient.configure do |config|
+Alfresco.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::SharedlinksApi.new
+api_instance = Alfresco::SharedlinksApi.new
 
 shared_id = "shared_id_example" # String | The identifier of a shared link to a file.
 
@@ -211,7 +211,7 @@ begin
   #Get a shared link
   result = api_instance.get_shared_link(shared_id, , opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue Alfresco::ApiError => e
   puts "Exception when calling SharedlinksApi->get_shared_link: #{e}"
 end
 ```
@@ -248,15 +248,15 @@ Get shared link content
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'alfresco_ruby'
 # setup authorization
-SwaggerClient.configure do |config|
+Alfresco.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::SharedlinksApi.new
+api_instance = Alfresco::SharedlinksApi.new
 
 shared_id = "shared_id_example" # String | The identifier of a shared link to a file.
 
@@ -270,7 +270,7 @@ begin
   #Get shared link content
   result = api_instance.get_shared_link_content(shared_id, , opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue Alfresco::ApiError => e
   puts "Exception when calling SharedlinksApi->get_shared_link_content: #{e}"
 end
 ```
@@ -309,15 +309,15 @@ Get shared link rendition information
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'alfresco_ruby'
 # setup authorization
-SwaggerClient.configure do |config|
+Alfresco.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::SharedlinksApi.new
+api_instance = Alfresco::SharedlinksApi.new
 
 shared_id = "shared_id_example" # String | The identifier of a shared link to a file.
 
@@ -328,7 +328,7 @@ begin
   #Get shared link rendition information
   result = api_instance.get_shared_link_rendition(shared_id, rendition_id)
   p result
-rescue SwaggerClient::ApiError => e
+rescue Alfresco::ApiError => e
   puts "Exception when calling SharedlinksApi->get_shared_link_rendition: #{e}"
 end
 ```
@@ -365,15 +365,15 @@ Get shared link rendition content
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'alfresco_ruby'
 # setup authorization
-SwaggerClient.configure do |config|
+Alfresco.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::SharedlinksApi.new
+api_instance = Alfresco::SharedlinksApi.new
 
 shared_id = "shared_id_example" # String | The identifier of a shared link to a file.
 
@@ -389,7 +389,7 @@ begin
   #Get shared link rendition content
   result = api_instance.get_shared_link_rendition_content(shared_id, rendition_id, opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue Alfresco::ApiError => e
   puts "Exception when calling SharedlinksApi->get_shared_link_rendition_content: #{e}"
 end
 ```
@@ -429,15 +429,15 @@ List renditions for a shared link
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'alfresco_ruby'
 # setup authorization
-SwaggerClient.configure do |config|
+Alfresco.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::SharedlinksApi.new
+api_instance = Alfresco::SharedlinksApi.new
 
 shared_id = "shared_id_example" # String | The identifier of a shared link to a file.
 
@@ -446,7 +446,7 @@ begin
   #List renditions for a shared link
   result = api_instance.list_shared_link_renditions(shared_id, )
   p result
-rescue SwaggerClient::ApiError => e
+rescue Alfresco::ApiError => e
   puts "Exception when calling SharedlinksApi->list_shared_link_renditions: #{e}"
 end
 ```
@@ -482,15 +482,15 @@ List shared links
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'alfresco_ruby'
 # setup authorization
-SwaggerClient.configure do |config|
+Alfresco.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::SharedlinksApi.new
+api_instance = Alfresco::SharedlinksApi.new
 
 opts = { 
   skip_count: 0, # Integer | The number of entities that exist in the collection before those included in this list.  If not supplied then the default value is 0. 
@@ -504,7 +504,7 @@ begin
   #List shared links
   result = api_instance.list_shared_links(opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue Alfresco::ApiError => e
   puts "Exception when calling SharedlinksApi->list_shared_links: #{e}"
 end
 ```

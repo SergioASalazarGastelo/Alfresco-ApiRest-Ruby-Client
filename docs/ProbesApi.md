@@ -1,4 +1,4 @@
-# SwaggerClient::ProbesApi
+# Alfresco::ProbesApi
 
 All URIs are relative to *https://localhost/alfresco/api/-default-/public/alfresco/versions/1*
 
@@ -17,15 +17,15 @@ Check readiness and liveness of the repository
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'alfresco_ruby'
 # setup authorization
-SwaggerClient.configure do |config|
+Alfresco.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::ProbesApi.new
+api_instance = Alfresco::ProbesApi.new
 
 probe_id = "probe_id_example" # String | The name of the probe: * -ready- * -live- 
 
@@ -34,7 +34,7 @@ begin
   #Check readiness and liveness of the repository
   result = api_instance.get_probe(probe_id)
   p result
-rescue SwaggerClient::ApiError => e
+rescue Alfresco::ApiError => e
   puts "Exception when calling ProbesApi->get_probe: #{e}"
 end
 ```

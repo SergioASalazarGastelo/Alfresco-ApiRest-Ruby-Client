@@ -1,4 +1,4 @@
-# SwaggerClient::DownloadBodyCreate
+# Alfresco::DownloadBodyCreate
 
 ## Properties
 Name | Type | Description | Notes

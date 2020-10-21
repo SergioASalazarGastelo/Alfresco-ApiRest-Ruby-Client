@@ -1,4 +1,4 @@
-# SwaggerClient::NodePaging
+# Alfresco::NodePaging
 
 ## Properties
 Name | Type | Description | Notes

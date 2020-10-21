@@ -1,4 +1,4 @@
-# SwaggerClient::GroupPaging
+# Alfresco::GroupPaging
 
 ## Properties
 Name | Type | Description | Notes

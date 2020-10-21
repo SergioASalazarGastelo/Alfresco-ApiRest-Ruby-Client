@@ -1,4 +1,4 @@
-# SwaggerClient::UserInfo
+# Alfresco::UserInfo
 
 ## Properties
 Name | Type | Description | Notes

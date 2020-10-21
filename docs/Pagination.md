@@ -1,4 +1,4 @@
-# SwaggerClient::Pagination
+# Alfresco::Pagination
 
 ## Properties
 Name | Type | Description | Notes

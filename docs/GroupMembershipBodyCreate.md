@@ -1,4 +1,4 @@
-# SwaggerClient::GroupMembershipBodyCreate
+# Alfresco::GroupMembershipBodyCreate
 
 ## Properties
 Name | Type | Description | Notes

@@ -1,4 +1,4 @@
-# SwaggerClient::RatingAggregate
+# Alfresco::RatingAggregate
 
 ## Properties
 Name | Type | Description | Notes

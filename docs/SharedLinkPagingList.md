@@ -1,4 +1,4 @@
-# SwaggerClient::SharedLinkPagingList
+# Alfresco::SharedLinkPagingList
 
 ## Properties
 Name | Type | Description | Notes

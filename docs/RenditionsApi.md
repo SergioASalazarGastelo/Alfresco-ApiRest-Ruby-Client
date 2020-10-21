@@ -1,4 +1,4 @@
-# SwaggerClient::RenditionsApi
+# Alfresco::RenditionsApi
 
 All URIs are relative to *https://localhost/alfresco/api/-default-/public/alfresco/versions/1*
 
@@ -20,25 +20,25 @@ Create rendition
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'alfresco_ruby'
 # setup authorization
-SwaggerClient.configure do |config|
+Alfresco.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::RenditionsApi.new
+api_instance = Alfresco::RenditionsApi.new
 
 node_id = "node_id_example" # String | The identifier of a node.
 
-rendition_body_create = SwaggerClient::RenditionBodyCreate.new # RenditionBodyCreate | The rendition \"id\".
+rendition_body_create = Alfresco::RenditionBodyCreate.new # RenditionBodyCreate | The rendition \"id\".
 
 
 begin
   #Create rendition
   api_instance.create_rendition(node_id, rendition_body_create)
-rescue SwaggerClient::ApiError => e
+rescue Alfresco::ApiError => e
   puts "Exception when calling RenditionsApi->create_rendition: #{e}"
 end
 ```
@@ -75,15 +75,15 @@ Get rendition information
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'alfresco_ruby'
 # setup authorization
-SwaggerClient.configure do |config|
+Alfresco.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::RenditionsApi.new
+api_instance = Alfresco::RenditionsApi.new
 
 node_id = "node_id_example" # String | The identifier of a node.
 
@@ -94,7 +94,7 @@ begin
   #Get rendition information
   result = api_instance.get_rendition(node_id, rendition_id)
   p result
-rescue SwaggerClient::ApiError => e
+rescue Alfresco::ApiError => e
   puts "Exception when calling RenditionsApi->get_rendition: #{e}"
 end
 ```
@@ -131,15 +131,15 @@ Get rendition content
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'alfresco_ruby'
 # setup authorization
-SwaggerClient.configure do |config|
+Alfresco.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::RenditionsApi.new
+api_instance = Alfresco::RenditionsApi.new
 
 node_id = "node_id_example" # String | The identifier of a node.
 
@@ -156,7 +156,7 @@ begin
   #Get rendition content
   result = api_instance.get_rendition_content(node_id, rendition_id, opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue Alfresco::ApiError => e
   puts "Exception when calling RenditionsApi->get_rendition_content: #{e}"
 end
 ```
@@ -197,15 +197,15 @@ List renditions
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'alfresco_ruby'
 # setup authorization
-SwaggerClient.configure do |config|
+Alfresco.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::RenditionsApi.new
+api_instance = Alfresco::RenditionsApi.new
 
 node_id = "node_id_example" # String | The identifier of a node.
 
@@ -217,7 +217,7 @@ begin
   #List renditions
   result = api_instance.list_renditions(node_id, , opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue Alfresco::ApiError => e
   puts "Exception when calling RenditionsApi->list_renditions: #{e}"
 end
 ```

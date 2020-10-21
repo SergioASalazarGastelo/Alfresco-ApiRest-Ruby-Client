@@ -1,4 +1,4 @@
-# SwaggerClient::TagPagingList
+# Alfresco::TagPagingList
 
 ## Properties
 Name | Type | Description | Notes

@@ -1,4 +1,4 @@
-# SwaggerClient::ActionBodyExec
+# Alfresco::ActionBodyExec
 
 ## Properties
 Name | Type | Description | Notes
