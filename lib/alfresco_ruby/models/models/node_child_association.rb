@@ -25,7 +25,7 @@ require 'date'
 
 module Alfresco
 
-  class DeletedNode
+  class NodeChildAssociation
     attr_accessor :id
 
     # The name must not contain spaces or the following special characters: * \" < > \\ / ? : and |. The character . must not be used at the end of the name. 
@@ -65,9 +65,7 @@ module Alfresco
 
     attr_accessor :permissions
 
-    attr_accessor :archived_by_user
-
-    attr_accessor :archived_at
+    attr_accessor :association
 
 
     # Attribute mapping from ruby-style variable name to JSON key.
@@ -92,8 +90,7 @@ module Alfresco
         :'allowable_operations' => :'allowableOperations',
         :'path' => :'path',
         :'permissions' => :'permissions',
-        :'archived_by_user' => :'archivedByUser',
-        :'archived_at' => :'archivedAt'
+        :'association' => :'association'
       }
     end
 
@@ -119,8 +116,7 @@ module Alfresco
         :'allowable_operations' => :'Array<String>',
         :'path' => :'PathInfo',
         :'permissions' => :'PermissionsInfo',
-        :'archived_by_user' => :'UserInfo',
-        :'archived_at' => :'DateTime'
+        :'association' => :'ChildAssociationInfo'
       }
     end
 
@@ -214,12 +210,8 @@ module Alfresco
         self.permissions = attributes[:'permissions']
       end
 
-      if attributes.has_key?(:'archivedByUser')
-        self.archived_by_user = attributes[:'archivedByUser']
-      end
-
-      if attributes.has_key?(:'archivedAt')
-        self.archived_at = attributes[:'archivedAt']
+      if attributes.has_key?(:'association')
+        self.association = attributes[:'association']
       end
 
     end
@@ -244,7 +236,7 @@ module Alfresco
     def valid?
       return false if @id.nil?
       return false if @name.nil?
-      return false if @name !~ Regexp.new(^(?!(.*[\\\"\\*\\\\\\>\\<\\?/\\:\\|]+.*)|(.*[\\.]?.*[\\.]+$)|(.*[ ]+$)))
+      return false if @name !~ Regexp.new('^(?!(.*[\\\"\\*\\\\\\>\\<\\?/\\:\\|]+.*)|(.*[\\.]?.*[\\.]+$)|(.*[ ]+$))')
       return false if @node_type.nil?
       return false if @is_folder.nil?
       return false if @is_file.nil?
@@ -252,8 +244,6 @@ module Alfresco
       return false if @modified_by_user.nil?
       return false if @created_at.nil?
       return false if @created_by_user.nil?
-      return false if @archived_by_user.nil?
-      return false if @archived_at.nil?
       return true
     end
 
@@ -264,7 +254,7 @@ module Alfresco
         fail ArgumentError, "name cannot be nil"
       end
 
-      if name !~ Regexp.new(^(?!(.*[\\\"\\*\\\\\\>\\<\\?/\\:\\|]+.*)|(.*[\\.]?.*[\\.]+$)|(.*[ ]+$)))
+      if name !~ Regexp.new('^(?!(.*[\\\"\\*\\\\\\>\\<\\?/\\:\\|]+.*)|(.*[\\.]?.*[\\.]+$)|(.*[ ]+$))')
         fail ArgumentError, "invalid value for 'name', must conform to the pattern ^(?!(.*[\\\"\\*\\\\\\>\\<\\?/\\:\\|]+.*)|(.*[\\.]?.*[\\.]+$)|(.*[ ]+$))."
       end
 
@@ -295,8 +285,7 @@ module Alfresco
           allowable_operations == o.allowable_operations &&
           path == o.path &&
           permissions == o.permissions &&
-          archived_by_user == o.archived_by_user &&
-          archived_at == o.archived_at
+          association == o.association
     end
 
     # @see the `==` method
@@ -308,7 +297,7 @@ module Alfresco
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [id, name, node_type, is_folder, is_file, is_locked, modified_at, modified_by_user, created_at, created_by_user, parent_id, is_link, is_favorite, content, aspect_names, properties, allowable_operations, path, permissions, archived_by_user, archived_at].hash
+      [id, name, node_type, is_folder, is_file, is_locked, modified_at, modified_by_user, created_at, created_by_user, parent_id, is_link, is_favorite, content, aspect_names, properties, allowable_operations, path, permissions, association].hash
     end
 
     # Builds the object from hash

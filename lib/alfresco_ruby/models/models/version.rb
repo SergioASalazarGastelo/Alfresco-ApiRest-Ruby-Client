@@ -25,10 +25,12 @@ require 'date'
 
 module Alfresco
 
-  class DeletedNode
+  class Version
     attr_accessor :id
 
-    # The name must not contain spaces or the following special characters: * \" < > \\ / ? : and |. The character . must not be used at the end of the name. 
+    attr_accessor :version_comment
+
+    # The name must not contain spaces or the following special characters: * \" < > \\ / ? : and |.  The character . must not be used at the end of the name. 
     attr_accessor :name
 
     attr_accessor :node_type
@@ -37,21 +39,9 @@ module Alfresco
 
     attr_accessor :is_file
 
-    attr_accessor :is_locked
-
     attr_accessor :modified_at
 
     attr_accessor :modified_by_user
-
-    attr_accessor :created_at
-
-    attr_accessor :created_by_user
-
-    attr_accessor :parent_id
-
-    attr_accessor :is_link
-
-    attr_accessor :is_favorite
 
     attr_accessor :content
 
@@ -59,41 +49,21 @@ module Alfresco
 
     attr_accessor :properties
 
-    attr_accessor :allowable_operations
-
-    attr_accessor :path
-
-    attr_accessor :permissions
-
-    attr_accessor :archived_by_user
-
-    attr_accessor :archived_at
-
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'id' => :'id',
+        :'version_comment' => :'versionComment',
         :'name' => :'name',
         :'node_type' => :'nodeType',
         :'is_folder' => :'isFolder',
         :'is_file' => :'isFile',
-        :'is_locked' => :'isLocked',
         :'modified_at' => :'modifiedAt',
         :'modified_by_user' => :'modifiedByUser',
-        :'created_at' => :'createdAt',
-        :'created_by_user' => :'createdByUser',
-        :'parent_id' => :'parentId',
-        :'is_link' => :'isLink',
-        :'is_favorite' => :'isFavorite',
         :'content' => :'content',
         :'aspect_names' => :'aspectNames',
-        :'properties' => :'properties',
-        :'allowable_operations' => :'allowableOperations',
-        :'path' => :'path',
-        :'permissions' => :'permissions',
-        :'archived_by_user' => :'archivedByUser',
-        :'archived_at' => :'archivedAt'
+        :'properties' => :'properties'
       }
     end
 
@@ -101,26 +71,16 @@ module Alfresco
     def self.swagger_types
       {
         :'id' => :'String',
+        :'version_comment' => :'String',
         :'name' => :'String',
         :'node_type' => :'String',
         :'is_folder' => :'BOOLEAN',
         :'is_file' => :'BOOLEAN',
-        :'is_locked' => :'BOOLEAN',
         :'modified_at' => :'DateTime',
         :'modified_by_user' => :'UserInfo',
-        :'created_at' => :'DateTime',
-        :'created_by_user' => :'UserInfo',
-        :'parent_id' => :'String',
-        :'is_link' => :'BOOLEAN',
-        :'is_favorite' => :'BOOLEAN',
         :'content' => :'ContentInfo',
         :'aspect_names' => :'Array<String>',
-        :'properties' => :'Object',
-        :'allowable_operations' => :'Array<String>',
-        :'path' => :'PathInfo',
-        :'permissions' => :'PermissionsInfo',
-        :'archived_by_user' => :'UserInfo',
-        :'archived_at' => :'DateTime'
+        :'properties' => :'Object'
       }
     end
 
@@ -134,6 +94,10 @@ module Alfresco
 
       if attributes.has_key?(:'id')
         self.id = attributes[:'id']
+      end
+
+      if attributes.has_key?(:'versionComment')
+        self.version_comment = attributes[:'versionComment']
       end
 
       if attributes.has_key?(:'name')
@@ -152,38 +116,12 @@ module Alfresco
         self.is_file = attributes[:'isFile']
       end
 
-      if attributes.has_key?(:'isLocked')
-        self.is_locked = attributes[:'isLocked']
-      else
-        self.is_locked = false
-      end
-
       if attributes.has_key?(:'modifiedAt')
         self.modified_at = attributes[:'modifiedAt']
       end
 
       if attributes.has_key?(:'modifiedByUser')
         self.modified_by_user = attributes[:'modifiedByUser']
-      end
-
-      if attributes.has_key?(:'createdAt')
-        self.created_at = attributes[:'createdAt']
-      end
-
-      if attributes.has_key?(:'createdByUser')
-        self.created_by_user = attributes[:'createdByUser']
-      end
-
-      if attributes.has_key?(:'parentId')
-        self.parent_id = attributes[:'parentId']
-      end
-
-      if attributes.has_key?(:'isLink')
-        self.is_link = attributes[:'isLink']
-      end
-
-      if attributes.has_key?(:'isFavorite')
-        self.is_favorite = attributes[:'isFavorite']
       end
 
       if attributes.has_key?(:'content')
@@ -198,28 +136,6 @@ module Alfresco
 
       if attributes.has_key?(:'properties')
         self.properties = attributes[:'properties']
-      end
-
-      if attributes.has_key?(:'allowableOperations')
-        if (value = attributes[:'allowableOperations']).is_a?(Array)
-          self.allowable_operations = value
-        end
-      end
-
-      if attributes.has_key?(:'path')
-        self.path = attributes[:'path']
-      end
-
-      if attributes.has_key?(:'permissions')
-        self.permissions = attributes[:'permissions']
-      end
-
-      if attributes.has_key?(:'archivedByUser')
-        self.archived_by_user = attributes[:'archivedByUser']
-      end
-
-      if attributes.has_key?(:'archivedAt')
-        self.archived_at = attributes[:'archivedAt']
       end
 
     end
@@ -244,16 +160,12 @@ module Alfresco
     def valid?
       return false if @id.nil?
       return false if @name.nil?
-      return false if @name !~ Regexp.new(^(?!(.*[\\\"\\*\\\\\\>\\<\\?/\\:\\|]+.*)|(.*[\\.]?.*[\\.]+$)|(.*[ ]+$)))
+      return false if @name !~ Regexp.new('^(?!(.*[\\\"\\*\\\\\\>\\<\\?/\\:\\|]+.*)|(.*[\\.]?.*[\\.]+$)|(.*[ ]+$))')
       return false if @node_type.nil?
       return false if @is_folder.nil?
       return false if @is_file.nil?
       return false if @modified_at.nil?
       return false if @modified_by_user.nil?
-      return false if @created_at.nil?
-      return false if @created_by_user.nil?
-      return false if @archived_by_user.nil?
-      return false if @archived_at.nil?
       return true
     end
 
@@ -264,7 +176,7 @@ module Alfresco
         fail ArgumentError, "name cannot be nil"
       end
 
-      if name !~ Regexp.new(^(?!(.*[\\\"\\*\\\\\\>\\<\\?/\\:\\|]+.*)|(.*[\\.]?.*[\\.]+$)|(.*[ ]+$)))
+      if name !~ Regexp.new('^(?!(.*[\\\"\\*\\\\\\>\\<\\?/\\:\\|]+.*)|(.*[\\.]?.*[\\.]+$)|(.*[ ]+$))')
         fail ArgumentError, "invalid value for 'name', must conform to the pattern ^(?!(.*[\\\"\\*\\\\\\>\\<\\?/\\:\\|]+.*)|(.*[\\.]?.*[\\.]+$)|(.*[ ]+$))."
       end
 
@@ -277,26 +189,16 @@ module Alfresco
       return true if self.equal?(o)
       self.class == o.class &&
           id == o.id &&
+          version_comment == o.version_comment &&
           name == o.name &&
           node_type == o.node_type &&
           is_folder == o.is_folder &&
           is_file == o.is_file &&
-          is_locked == o.is_locked &&
           modified_at == o.modified_at &&
           modified_by_user == o.modified_by_user &&
-          created_at == o.created_at &&
-          created_by_user == o.created_by_user &&
-          parent_id == o.parent_id &&
-          is_link == o.is_link &&
-          is_favorite == o.is_favorite &&
           content == o.content &&
           aspect_names == o.aspect_names &&
-          properties == o.properties &&
-          allowable_operations == o.allowable_operations &&
-          path == o.path &&
-          permissions == o.permissions &&
-          archived_by_user == o.archived_by_user &&
-          archived_at == o.archived_at
+          properties == o.properties
     end
 
     # @see the `==` method
@@ -308,7 +210,7 @@ module Alfresco
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [id, name, node_type, is_folder, is_file, is_locked, modified_at, modified_by_user, created_at, created_by_user, parent_id, is_link, is_favorite, content, aspect_names, properties, allowable_operations, path, permissions, archived_by_user, archived_at].hash
+      [id, version_comment, name, node_type, is_folder, is_file, modified_at, modified_by_user, content, aspect_names, properties].hash
     end
 
     # Builds the object from hash
