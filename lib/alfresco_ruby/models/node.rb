@@ -216,7 +216,7 @@ module Alfresco
         invalid_properties.push("invalid value for 'name', name cannot be nil.")
       end
 
-      if @name !~ Regexp.new(^(?!(.*[\\\"\\*\\\\\\>\\<\\?/\\:\\|]+.*)|(.*[\\.]?.*[\\.]+$)|(.*[ ]+$)))
+      if @name !~ Regexp.new('^(?!(.*[\\\"\\*\\\\\\>\\<\\?/\\:\\|]+.*)|(.*[\\.]?.*[\\.]+$)|(.*[ ]+$))')
         invalid_properties.push("invalid value for 'name', must conform to the pattern ^(?!(.*[\\\"\\*\\\\\\>\\<\\?/\\:\\|]+.*)|(.*[\\.]?.*[\\.]+$)|(.*[ ]+$)).")
       end
 
@@ -228,7 +228,7 @@ module Alfresco
     def valid?
       return false if @id.nil?
       return false if @name.nil?
-      return false if @name !~ Regexp.new(^(?!(.*[\\\"\\*\\\\\\>\\<\\?/\\:\\|]+.*)|(.*[\\.]?.*[\\.]+$)|(.*[ ]+$)))
+      return false if @name !~ Regexp.new('^(?!(.*[\\\"\\*\\\\\\>\\<\\?/\\:\\|]+.*)|(.*[\\.]?.*[\\.]+$)|(.*[ ]+$))')
       return false if @node_type.nil?
       return false if @is_folder.nil?
       return false if @is_file.nil?
@@ -246,7 +246,7 @@ module Alfresco
         fail ArgumentError, "name cannot be nil"
       end
 
-      if name !~ Regexp.new(^(?!(.*[\\\"\\*\\\\\\>\\<\\?/\\:\\|]+.*)|(.*[\\.]?.*[\\.]+$)|(.*[ ]+$)))
+      if name !~ Regexp.new('^(?!(.*[\\\"\\*\\\\\\>\\<\\?/\\:\\|]+.*)|(.*[\\.]?.*[\\.]+$)|(.*[ ]+$))')
         fail ArgumentError, "invalid value for 'name', must conform to the pattern ^(?!(.*[\\\"\\*\\\\\\>\\<\\?/\\:\\|]+.*)|(.*[\\.]?.*[\\.]+$)|(.*[ ]+$))."
       end
 

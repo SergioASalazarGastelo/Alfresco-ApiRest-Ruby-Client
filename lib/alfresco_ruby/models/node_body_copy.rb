@@ -71,7 +71,7 @@ module Alfresco
     def list_invalid_properties
       invalid_properties = Array.new
 
-      if !@name.nil? && @name !~ Regexp.new(^(?!(.*[\\\"\\*\\\\\\>\\<\\?/\\:\\|]+.*)|(.*[\\.]?.*[\\.]+$)|(.*[ ]+$)))
+      if !@name.nil? && @name !~ Regexp.new('^(?!(.*[\\\"\\*\\\\\\>\\<\\?/\\:\\|]+.*)|(.*[\\.]?.*[\\.]+$)|(.*[ ]+$))')
         invalid_properties.push("invalid value for 'name', must conform to the pattern ^(?!(.*[\\\"\\*\\\\\\>\\<\\?/\\:\\|]+.*)|(.*[\\.]?.*[\\.]+$)|(.*[ ]+$)).")
       end
 
@@ -82,7 +82,7 @@ module Alfresco
     # @return true if the model is valid
     def valid?
       return false if @target_parent_id.nil?
-      return false if !@name.nil? && @name !~ Regexp.new(^(?!(.*[\\\"\\*\\\\\\>\\<\\?/\\:\\|]+.*)|(.*[\\.]?.*[\\.]+$)|(.*[ ]+$)))
+      return false if !@name.nil? && @name !~ Regexp.new('^(?!(.*[\\\"\\*\\\\\\>\\<\\?/\\:\\|]+.*)|(.*[\\.]?.*[\\.]+$)|(.*[ ]+$))')
       return true
     end
 
@@ -90,7 +90,7 @@ module Alfresco
     # @param [Object] name Value to be assigned
     def name=(name)
 
-      if !name.nil? && name !~ Regexp.new(^(?!(.*[\\\"\\*\\\\\\>\\<\\?/\\:\\|]+.*)|(.*[\\.]?.*[\\.]+$)|(.*[ ]+$)))
+      if !name.nil? && name !~ Regexp.new('^(?!(.*[\\\"\\*\\\\\\>\\<\\?/\\:\\|]+.*)|(.*[\\.]?.*[\\.]+$)|(.*[ ]+$))')
         fail ArgumentError, "invalid value for 'name', must conform to the pattern ^(?!(.*[\\\"\\*\\\\\\>\\<\\?/\\:\\|]+.*)|(.*[\\.]?.*[\\.]+$)|(.*[ ]+$))."
       end
 
